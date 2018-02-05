@@ -6,6 +6,7 @@
 //}
 
 android {
+  compileSdkVersion 25
   defaultConfig {
     generatedDensities = []
     applicationId = "__PACKAGE__"

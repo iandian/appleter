@@ -1,3 +1,18 @@
+issues:
+  1: Failed to find target with hash string 'android-23' when build android
+    https://github.com/NativeScript/NativeScript/issues/4004
+    
+    resolution:
+    nativescript\src\App_Resources\Android\app.gradle add one line
+    
+        compileSdkVersion 25
+    
+  2: ERROR in ./app.aot.ts Module not found: Error: Can't resolve './native.module.ngfactory' in '/app/nativescript/app'
+    https://github.com/NathanWalker/angular-seed-advanced/issues/406
+    
+    resolution:
+    nativescript\package.json  update  "@ngtools/webpack": "1.7.4"
+
 Please read [this notice first](https://github.com/NathanWalker/angular-seed-advanced/issues/474) before continuing.
 
 ![Angular Seed Advanced](https://cdn.filestackcontent.com/LSWpUEEGQiOdCpv9t6Ri?v=0)

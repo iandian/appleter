@@ -2,13 +2,13 @@ version: '3'
 
 services:
 
-  angular-seed:
+  appleter:
     build:
       context: .
-      dockerfile: ./.docker/angular-seed.development.dockerfile
+      dockerfile: ./.docker/appleter.development.dockerfile
     command: npm start
-    container_name: angular-seed-start
-    image: angular-seed
+    container_name: appleter-start
+    image: appleter
     networks:
       - dev-network
     ports:
