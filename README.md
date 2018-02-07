@@ -12,6 +12,12 @@ issues:
     
     resolution:
     nativescript\package.json  update  "@ngtools/webpack": "1.7.4"
+    
+  3: Cannot find module '.tmp/Rx.min.js'   when npm start
+    https://github.com/mgechev/angular-seed/issues/1501
+    
+    resolution:
+    run ./node_modules/.bin/gulp build.bundle.rxjs and try npm start again
 
 Please read [this notice first](https://github.com/NathanWalker/angular-seed-advanced/issues/474) before continuing.
 
