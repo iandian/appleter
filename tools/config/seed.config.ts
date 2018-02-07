@@ -448,8 +448,6 @@ export class SeedConfig {
       '@angular/platform-browser-dynamic/testing':
       'node_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic-testing.umd.js',
       '@angular/router/testing': 'node_modules/@angular/router/bundles/router-testing.umd.js',
-      '@ng-bootstrap': 'node_modules/@ng-bootstrap',
-      '@ng-bootstrap/ng-bootstrap': 'node_modules/@ng-bootstrap/ng-bootstrap',
       'app/*': '/app/*',
       // For test config
       'dist/dev/*': '/base/dist/dev/*',
@@ -489,6 +487,7 @@ export class SeedConfig {
       '@angular/platform-browser/animations': 'node_modules/@angular/platform-browser/bundles/platform-browser-animations.umd.js',
       '@angular/animations/browser': 'node_modules/@angular/animations/bundles/animations-browser.umd.js',
       'dist/tmp/node_modules/*': 'dist/tmp/node_modules/*',
+      '@ng-bootstrap/ng-bootstrap': 'node_modules/@ng-bootstrap/ng-bootstrap',
       'node_modules/*': 'node_modules/*',
       '*': 'node_modules/*'
     },
@@ -536,6 +535,9 @@ export class SeedConfig {
       '@angular/service-worker': {
         main: 'bundles/service-worker.umd.js',
         defaultExtension: 'js'
+      },
+      "ng2-bootstrap": {
+          defaultExtension: 'js'
       },
       'rxjs': {
         main: 'Rx.js',
