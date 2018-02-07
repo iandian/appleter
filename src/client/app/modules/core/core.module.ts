@@ -4,17 +4,38 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
-
+import { NbAuthModule, NbDummyAuthProvider } from '@nebular/auth';
 // module
 import { SharedModule } from '../shared/index';
 import { CORE_DIRECTIVES } from './directives/index';
 import { CORE_PROVIDERS } from './services/index';
 import { Config } from './utils/index';
+import { throwIfAlreadyLoaded } from './module-import-guard';
+import { DataModule } from './data/data.module';
+import { AnalyticsService } from './utils/analytics.service';
 
 interface ICoreModuleOptions {
   window?: any;
   console?: any;
 }
+
+const NB_CORE_PROVIDERS = [
+  ...DataModule.forRoot().providers,
+  ...NbAuthModule.forRoot({
+    providers: {
+      email: {
+        service: NbDummyAuthProvider,
+        config: {
+          delay: 3000,
+          login: {
+            rememberMe: true,
+          },
+        },
+      },
+    },
+  }).providers,
+  AnalyticsService,
+];
 
 /**
  * Do not specify providers for modules that might be imported by a lazy loaded module.
@@ -22,12 +43,14 @@ interface ICoreModuleOptions {
 
 @NgModule({
   imports: [
-    SharedModule
+    SharedModule,
+    CommonModule
   ],
   declarations: [
     ...CORE_DIRECTIVES
   ],
   exports: [
+    NbAuthModule,
     ...CORE_DIRECTIVES
   ],
   providers: [
@@ -39,12 +62,13 @@ export class CoreModule {
   static forRoot(configuredProviders: Array<any>): ModuleWithProviders {
     return {
       ngModule: CoreModule,
-      providers: configuredProviders
+      providers: [
+        ...NB_CORE_PROVIDERS,
+        ...configuredProviders
+      ],
     };
   }
   constructor(@Optional() @SkipSelf() parentModule: CoreModule) {
-    if (parentModule) {
-      throw new Error('CoreModule already loaded; Import in root module only.');
-    }
+    throwIfAlreadyLoaded(parentModule, 'CoreModule');
   }
 }

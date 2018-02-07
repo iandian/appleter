@@ -19,7 +19,7 @@ import { MultilingualModule } from '../modules/i18n/multilingual.module';
 import { reducer, LanguageProviders } from '../modules/i18n/index';
 
 // module
-import { APP_COMPONENTS } from './index';
+import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 
@@ -42,7 +42,7 @@ const testModuleConfig = () => {
     ],
     declarations: [
       TestComponent,
-      ...APP_COMPONENTS
+      AppComponent
     ],
     providers: [
       TEST_CORE_PROVIDERS(),

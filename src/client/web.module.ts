@@ -1,3 +1,10 @@
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpModule } from '@angular/http';
+
+import { routes } from './app/components/app.routes';
+import { ThemeModule } from './app/components/@theme/theme.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 // angular
 import { NgModule } from '@angular/core';
 import { APP_BASE_HREF } from '@angular/common';
@@ -12,8 +19,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { TranslateLoader } from '@ngx-translate/core';
 
 // app
-import { APP_COMPONENTS, AppComponent } from './app/components/index';
-import { routes } from './app/components/app.routes';
+import { AppComponent } from './app/components/app.component';
 
 // feature modules
 import { WindowService, StorageService, ConsoleService, createConsoleTarget, provideConsoleTarget, LogTarget, LogLevel, ConsoleTarget } from './app/modules/core/services/index';
@@ -66,6 +72,10 @@ if (String('<%= BUILD_TYPE %>') === 'dev') {
 @NgModule({
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    HttpModule,
+    NgbModule.forRoot(),
+    ThemeModule.forRoot(),
     CoreModule.forRoot([
       { provide: WindowService, useFactory: (win) },
       { provide: StorageService, useFactory: (storage) },
@@ -86,9 +96,6 @@ if (String('<%= BUILD_TYPE %>') === 'dev') {
     EffectsModule.run(SampleEffects),
     // dev environment only imports
     DEV_IMPORTS,
-  ],
-  declarations: [
-    APP_COMPONENTS
   ],
   providers: [
     {
