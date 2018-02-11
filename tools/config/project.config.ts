@@ -42,13 +42,13 @@ export class ProjectConfig extends SeedAdvancedConfig {
 
     // Add packages (e.g. ng2-translate)
     // ng2-translate is already added with the advanced seed - here for example only
-    // let additionalPackages: ExtendPackages[] = [{
-    //   name: 'ng2-translate',
-    //   // Path to the package's bundle
-    //   path: 'node_modules/ng2-translate/bundles/ng2-translate.umd.js'
-    // }];
-    //
-    // this.addPackagesBundles(additionalPackages);
+    let additionalPackages: ExtendPackages[] = [{
+      name: '@ng-bootstrap/ng-bootstrap',
+      // Path to the package's bundle
+      path: 'node_modules/@ng-bootstrap/ng-bootstrap/bundles/ng-bootstrap.js'
+    }];
+    
+    this.addPackagesBundles(additionalPackages);
 
     /* Add proxy middleware */
     // this.PROXY_MIDDLEWARE = [
