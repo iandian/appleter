@@ -487,7 +487,7 @@ export class SeedConfig {
       '@angular/platform-browser/animations': 'node_modules/@angular/platform-browser/bundles/platform-browser-animations.umd.js',
       '@angular/animations/browser': 'node_modules/@angular/animations/bundles/animations-browser.umd.js',
       'dist/tmp/node_modules/*': 'dist/tmp/node_modules/*',
-      '@ng-bootstrap/ng-bootstrap': 'node_modules/@ng-bootstrap/ng-bootstrap',
+      '@ng-bootstrap/ng-bootstrap': 'node_modules/@ng-bootstrap/ng-bootstrap/bundles/ng-bootstrap.js',
       'node_modules/*': 'node_modules/*',
       '*': 'node_modules/*'
     },
