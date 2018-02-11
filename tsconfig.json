@@ -12,6 +12,7 @@
     "pretty": true,
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
+    "moduleResolution": "Node",
     "noImplicitAny": true,
     "noImplicitReturns": true,
     "noImplicitUseStrict": false,
