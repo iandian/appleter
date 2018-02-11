@@ -537,7 +537,8 @@ export class SeedConfig {
         defaultExtension: 'js'
       },
       "ng2-bootstrap": {
-          defaultExtension: 'js'
+        main: 'bundles/ng-bootstrap.js',
+        defaultExtension: 'js'
       },
       'rxjs': {
         main: 'Rx.js',
