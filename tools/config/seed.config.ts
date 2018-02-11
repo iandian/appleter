@@ -426,6 +426,7 @@ export class SeedConfig {
   SYSTEM_CONFIG_DEV: any = {
     defaultJSExtensions: true,
     paths: {
+      'npm:': 'node_modules/',
       [this.BOOTSTRAP_MODULE]: `${this.APP_BASE}${this.BOOTSTRAP_MODULE}`,
       '@angular/animations': 'node_modules/@angular/animations/bundles/animations.umd.js',
       '@angular/platform-browser/animations': 'node_modules/@angular/platform-browser/bundles/platform-browser-animations.umd.js',
@@ -448,12 +449,18 @@ export class SeedConfig {
       '@angular/platform-browser-dynamic/testing':
       'node_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic-testing.umd.js',
       '@angular/router/testing': 'node_modules/@angular/router/bundles/router-testing.umd.js',
+      '@ng-bootstrap':              'npm:@ng-bootstrap',
+      '@ng-bootstrap/ng-bootstrap':'npm:@ng-bootstrap/ng-bootstrap/bundles/ng-bootstrap.js',
       'app/*': '/app/*',
       // For test config
       'dist/dev/*': '/base/dist/dev/*',
       '*': 'node_modules/*'
     },
     packages: {
+      "ng2-bootstrap": {
+        main: 'bundles/ng-bootstrap.js',
+        defaultExtension: 'js'
+      }
     }
   };
 
@@ -482,14 +489,11 @@ export class SeedConfig {
       // Note that for multiple apps this configuration need to be updated
       // You will have to include entries for each individual application in
       // `src/client`.
-      'npm:': 'node_modules/',
       [join(this.TMP_DIR, '*')]: `${this.TMP_DIR}/*`,
       // [join(this.TMP_DIR, this.BOOTSTRAP_DIR, '*')]: `${this.TMP_DIR}/${this.BOOTSTRAP_DIR}/*`,
       '@angular/platform-browser/animations': 'node_modules/@angular/platform-browser/bundles/platform-browser-animations.umd.js',
       '@angular/animations/browser': 'node_modules/@angular/animations/bundles/animations-browser.umd.js',
       'dist/tmp/node_modules/*': 'dist/tmp/node_modules/*',
-      '@ng-bootstrap':              'npm:@ng-bootstrap',
-      '@ng-bootstrap/ng-bootstrap':'npm:@ng-bootstrap/ng-bootstrap/bundles/ng-bootstrap.js',
       'node_modules/*': 'node_modules/*',
       '*': 'node_modules/*'
     },
@@ -536,10 +540,6 @@ export class SeedConfig {
       },
       '@angular/service-worker': {
         main: 'bundles/service-worker.umd.js',
-        defaultExtension: 'js'
-      },
-      "ng2-bootstrap": {
-        main: 'bundles/ng-bootstrap.js',
         defaultExtension: 'js'
       },
       'rxjs': {
