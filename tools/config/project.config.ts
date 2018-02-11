@@ -42,6 +42,7 @@ export class ProjectConfig extends SeedAdvancedConfig {
 
     // Add packages (e.g. ng2-translate)
     // ng2-translate is already added with the advanced seed - here for example only
+    // https://github.com/mgechev/angular-seed/wiki/Add-external-dependency
     let additionalPackages: ExtendPackages[] = [{
       name: '@ng-bootstrap/ng-bootstrap',
       // Path to the package's bundle
