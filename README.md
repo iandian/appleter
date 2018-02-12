@@ -30,6 +30,18 @@ issues:
   /app/appleter/node_modules/@ngrx/effects/src/bootstrap-listener.d.ts(1,20): error TS2305: Module '"/app/appleter/node_modules/@angular/core/core"' has no exported member 'OpaqueToken'.
   need to update ngrx version to up 4.1.0, npm uninstall @ngrx/core and npm Install
   
+  6: Property 'payload' does not exist on type 'Action'
+  src/client/app/modules/i18n/effects/multilingual.effect.ts(21,25): error TS2339: Property 'payload' does not exist on type 'Action'.
+  
+  resolution:
+  .map((action: multilingual.ChangeAction) => {
+    
+  7: Property 'run' does not exist on type 'typeof EffectsModule'
+  src/client/web.module.ts(95,19): error TS2339: Property 'run' does not exist on type 'typeof EffectsModule'.
+  
+  resolution:
+  https://github.com/ngrx/platform/blob/master/MIGRATION.md#action-interface
+  EffectsModule.run change to EffectsModule.forRoot
 
 Please read [this notice first](https://github.com/NathanWalker/angular-seed-advanced/issues/474) before continuing.
 

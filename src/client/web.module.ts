@@ -92,8 +92,10 @@ if (String('<%= BUILD_TYPE %>') === 'dev') {
     SampleModule,
     // configure app state
     StoreModule.provideStore(AppReducer),
-    EffectsModule.run(MultilingualEffects),
-    EffectsModule.run(SampleEffects),
+    EffectsModule.forRoot([
+      MultilingualEffects,
+      SampleEffects
+    ]),
     // dev environment only imports
     DEV_IMPORTS,
   ],
