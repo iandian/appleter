@@ -25,7 +25,15 @@
       "node",
       "jasmine",
       "systemjs"
-    ]
+    ],
+    "paths": {
+      "@angular/*": [
+        "../node_modules/@angular/*"
+      ],
+      "@nebular/*": [
+        "../node_modules/@nebular/*"
+      ]
+    }
   },
   "compileOnSave": false
 }
