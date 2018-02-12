@@ -30,7 +30,7 @@ export class SampleEffects {
 
   @Effect() add$: Observable<Action> = this.actions$
     .ofType(NameList.ActionTypes.ADD)
-    .map(action => {
+    .map((action: NameList.AddAction) => {
       let name = action.payload;
       // analytics
       this.nameListService.track(NameList.ActionTypes.NAME_ADDED, { label: name });

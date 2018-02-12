@@ -91,7 +91,7 @@ if (String('<%= BUILD_TYPE %>') === 'dev') {
     }]),
     SampleModule,
     // configure app state
-    StoreModule.provideStore(AppReducer),
+    StoreModule.forRoot(AppReducer),
     EffectsModule.forRoot([
       MultilingualEffects,
       SampleEffects
