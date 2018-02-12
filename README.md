@@ -42,6 +42,13 @@ issues:
   resolution:
   https://github.com/ngrx/platform/blob/master/MIGRATION.md#action-interface
   EffectsModule.run change to EffectsModule.forRoot
+  
+  8: Property 'provideStore' does not exist on type 'typeof StoreModule'
+  src/client/web.module.ts(94,17): error TS2339: Property 'provideStore' does not exist on type 'typeof StoreModule'.
+  
+  resolution:
+  https://github.com/ngrx/platform/blob/master/MIGRATION.md#action-interface
+  StoreModule.provideStore change to StoreModule.forRoot
 
 Please read [this notice first](https://github.com/NathanWalker/angular-seed-advanced/issues/474) before continuing.
 
