@@ -18,6 +18,18 @@ issues:
     
     resolution:
     run ./node_modules/.bin/gulp build.bundle.rxjs and try npm start again
+    
+  4: Cannot find name 'tinymce'
+  src/client/app/components/@theme/components/tiny-mce/tiny-mce.component.ts(16,5): error TS2304: Cannot find name 'tinymce'.
+  src/client/app/components/@theme/components/tiny-mce/tiny-mce.component.ts(31,5): error TS2304: Cannot find name 'tinymce'.
+    
+    resolution:
+    add typings.d.ts file in client folder
+
+  5: has no exported member 'OpaqueToken'
+  /app/appleter/node_modules/@ngrx/effects/src/bootstrap-listener.d.ts(1,20): error TS2305: Module '"/app/appleter/node_modules/@angular/core/core"' has no exported member 'OpaqueToken'.
+  need to update ngrx version to up 4.1.0, npm uninstall @ngrx/core and npm Install
+  
 
 Please read [this notice first](https://github.com/NathanWalker/angular-seed-advanced/issues/474) before continuing.
 
