@@ -16,6 +16,7 @@
     "noImplicitReturns": true,
     "noImplicitUseStrict": false,
     "noFallthroughCasesInSwitch": true,
+    "moduleResolution": "Node",
     "typeRoots": [
       "./node_modules/@types",
       "./node_modules"
@@ -39,7 +40,6 @@
     "tools/manual_typings/seed/systemjs-builder.d.ts",
     "tools/manual_typings/seed/tildify.d.ts"
   ],
-  "moduleResolution": "Node",
   "exclude": [
     "desktop",
     "nativescript",
