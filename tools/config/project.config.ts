@@ -47,7 +47,19 @@ export class ProjectConfig extends SeedAdvancedConfig {
       name: '@ng-bootstrap/ng-bootstrap',
       // Path to the package's bundle
       path: 'node_modules/@ng-bootstrap/ng-bootstrap/bundles/ng-bootstrap.js'
-    }];
+    },
+    {
+      name: '@nebular/theme',
+      // Path to the package's bundle
+      path: 'node_modules/@nebular/theme/bundles/auth.umd.js'
+    },
+    {
+      name: '@nebular/auth',
+      // Path to the package's bundle
+      path: 'node_modules/@nebular/auth/bundles/theme.umd.js'
+    }
+  
+  ];
     
     this.addPackagesBundles(additionalPackages);
 
