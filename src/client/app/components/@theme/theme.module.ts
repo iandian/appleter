@@ -15,7 +15,7 @@ import {
   NbThemeModule,
   NbUserModule,
   NbCheckboxModule,
-} from '@nebular/theme';
+} from 'node_modules/@nebular/theme';
 
 import {
   FooterComponent,
