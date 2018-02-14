@@ -1,8 +1,6 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpModule } from '@angular/http';
 
-import { routes } from './app/components/app.routes';
-import { ThemeModule } from './app/components/@theme/theme.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 // angular
@@ -20,7 +18,8 @@ import { TranslateLoader } from '@ngx-translate/core';
 
 // app
 import { AppComponent } from './app/components/app.component';
-
+import { routes } from './app/components/app.routes';
+import { ThemeModule } from './app/components/@theme/theme.module';
 // feature modules
 import { WindowService, StorageService, ConsoleService, createConsoleTarget, provideConsoleTarget, LogTarget, LogLevel, ConsoleTarget } from './app/modules/core/services/index';
 import { CoreModule, Config } from './app/modules/core/index';
