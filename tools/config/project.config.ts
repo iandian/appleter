@@ -51,12 +51,12 @@ export class ProjectConfig extends SeedAdvancedConfig {
     {
       name: '@nebular/theme',
       // Path to the package's bundle
-      path: 'node_modules/@nebular/theme/bundles/auth.umd.js'
+      path: 'node_modules/@nebular/theme/bundles/theme.umd.js'
     },
     {
       name: '@nebular/auth',
       // Path to the package's bundle
-      path: 'node_modules/@nebular/auth/bundles/theme.umd.js'
+      path: 'node_modules/@nebular/auth/bundles/auth.umd.js'
     }
   
   ];
