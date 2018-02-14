@@ -44,8 +44,10 @@
     "desktop",
     "nativescript",
     "node_modules",
-    "dist",
-    "src"
+    "dist"
+  ],
+  "include": [
+      "src/**/*"
   ],
   "compileOnSave": false
 }
