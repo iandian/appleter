@@ -24,14 +24,14 @@ import {
   ThemeSettingsComponent,
   ThemeSwitcherComponent,
   TinyMCEComponent,
-} from './components';
-import { CapitalizePipe, PluralPipe, RoundPipe, TimingPipe } from './pipes';
+} from './components/index';
+import { CapitalizePipe, PluralPipe, RoundPipe, TimingPipe } from './pipes/index';
 import {
   OneColumnLayoutComponent,
   SampleLayoutComponent,
   ThreeColumnsLayoutComponent,
   TwoColumnsLayoutComponent,
-} from './layouts';
+} from './layouts/index';
 import { DEFAULT_THEME } from './styles/theme.default';
 import { COSMIC_THEME } from './styles/theme.cosmic';
 
