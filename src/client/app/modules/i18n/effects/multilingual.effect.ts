@@ -16,8 +16,8 @@ import * as multilingual from '../actions/multilingual.action';
 export class MultilingualEffects {
 
   @Effect() change$: Observable<Action> = this.actions$.pipe(
-    ofType(multilingual.ActionTypes.CHANGE)
-    .map(action => {
+    ofType(multilingual.ActionTypes.CHANGE),
+    map(action => {
       let lang = action.payload;
       if (includes(map(this.languages, 'code'), lang)) {
         let langChangedAction = new multilingual.LangChangedAction(lang);

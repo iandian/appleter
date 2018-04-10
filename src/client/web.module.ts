@@ -27,7 +27,7 @@ import { CoreModule, Config } from './app/modules/core/index';
 import { AnalyticsModule } from './app/modules/analytics/index';
 import { MultilingualModule, Languages, translateLoaderFactory, MultilingualEffects } from './app/modules/i18n/index';
 import { SampleModule, SampleEffects } from './app/modules/sample/index';
-import { AppReducer } from './app/modules/ngrx/index';
+import { reducers } from './app/modules/ngrx/index';
 
 // config
 Config.PLATFORM_TARGET = Config.PLATFORMS.WEB;
@@ -65,7 +65,9 @@ let DEV_IMPORTS: any[] = [];
 if (String('<%= BUILD_TYPE %>') === 'dev') {
   DEV_IMPORTS = [
     ...DEV_IMPORTS,
-    StoreDevtoolsModule.instrumentOnlyWithExtension()
+    StoreDevtoolsModule.instrument({
+      name: 'NgRx Book Store DevTools'
+    })
   ];
 }
 
@@ -87,7 +89,7 @@ if (String('<%= BUILD_TYPE %>') === 'dev') {
     }]),
     SampleModule,
     // configure app state
-    StoreModule.forRoot(AppReducer),
+    StoreModule.forRoot(reducers),
     StoreRouterConnectingModule.forRoot({
       /*
         They stateKey defines the name of the state used by the router-store reducer.
