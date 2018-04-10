@@ -21,7 +21,9 @@ export class HomeComponent implements OnInit {
   constructor(private store: Store<IAppState>, public routerext: RouterExtensions) {}
 
   ngOnInit() {
-    this.names$ = this.store.let(getNames);
+    this.names$ = this.store.pipe(
+      select(getNames)
+    );
     this.newName = '';
   }
 

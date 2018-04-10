@@ -1,8 +1,11 @@
 // libs
 import { Observable } from 'rxjs/Observable';
 // import { combineLatest } from 'rxjs/observable/combineLatest';
-import { ActionReducer } from '@ngrx/store';
-import '@ngrx/core/add/operator/select';
+import {
+  createSelector,
+  createFeatureSelector,
+  ActionReducerMap,
+} from '@ngrx/store';
 
 /**
  * The compose function is one of our most handy tools. In basic terms, you give
@@ -56,31 +59,15 @@ export interface IAppState {
  * wrapping that in storeLogger. Remember that compose applies
  * the result from right to left.
  */
-const reducers = {
+export const reducers: ActionReducerMap<IAppState> = {
   i18n: fromMultilingual.reducer,
   sample: fromSample.reducer
 };
 
-// ensure state is frozen as extra level of security when developing
-// helps maintain immutability
-const developmentReducer: ActionReducer<IAppState> = compose(storeFreeze, combineReducers)(reducers);
-// for production, dev has already been cleared so no need
-const productionReducer: ActionReducer<IAppState> = combineReducers(reducers);
 
-export function AppReducer(state: any, action: any) {
-  if (String('<%= BUILD_TYPE %>') === 'dev') {
-    return developmentReducer(state, action);
-  } else {
-    return productionReducer(state, action);
-  }
-}
+export const getMultilingualState = createFeatureSelector<IAppState>('i18n');
+export const getNameListState = createFeatureSelector<IAppState>('sample');
 
-export function getMultilingualState(state$: Observable<IAppState>): Observable<fromMultilingual.IMultilingualState> {
-  return state$.select(s => s.i18n);
-}
-export function getNameListState(state$: Observable<IAppState>): Observable<fromSample.ISampleState> {
-  return state$.select(s => s.sample);
-}
 
-export const getLang: any = compose(fromMultilingual.getLang, getMultilingualState);
-export const getNames: any = compose(fromSample.getNames, getNameListState);
+export const getLang = createSelector(getMultilingualState, fromMultilingual.getLang);
+export const getNames = createSelector(getNameListState, fromSample.getNames);

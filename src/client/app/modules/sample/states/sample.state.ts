@@ -9,6 +9,4 @@ export const sampleInitialState: ISampleState = {
 };
 
 // selects specific slice from sample state
-export function getNames(state$: Observable<ISampleState>) {
-  return state$.select(state => state.names);
-}
+export const getNames = (state: ISampleState) => state.names;

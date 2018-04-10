@@ -2,8 +2,8 @@
 import { Injectable, Inject } from '@angular/core';
 
 // libs
-import { Store, Action } from '@ngrx/store';
-import { Effect, Actions } from '@ngrx/effects';
+import { Action } from '@ngrx/store';
+import { Actions, Effect, ofType } from '@ngrx/effects';
 import { includes, map } from 'lodash';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
@@ -15,8 +15,8 @@ import * as multilingual from '../actions/multilingual.action';
 @Injectable()
 export class MultilingualEffects {
 
-  @Effect() change$: Observable<Action> = this.actions$
-    .ofType(multilingual.ActionTypes.CHANGE)
+  @Effect() change$: Observable<Action> = this.actions$.pipe(
+    ofType(multilingual.ActionTypes.CHANGE)
     .map(action => {
       let lang = action.payload;
       if (includes(map(this.languages, 'code'), lang)) {
@@ -29,10 +29,10 @@ export class MultilingualEffects {
         // not supported (here for example)
         return new multilingual.LangUnsupportedAction(lang);
       }
-    });
+    })
+  );
 
   constructor(
-    private store: Store<any>,
     private actions$: Actions,
     private multilangService: MultilingualService,
     @Inject(Languages) private languages
