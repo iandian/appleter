@@ -201,7 +201,7 @@
     "@nebular/auth": "2.0.0-rc.6",
     "@nebular/theme": "2.0.0-rc.6",
     "@ngrx/effects": "^5.2.0",
-    "@ngrx/db": "^5.2.0",
+    "@ngrx/db": "^2.1.0",
     "@ngrx/store": "^5.2.0",
     "@ngrx/entity": "^5.2.0",
     "@ngrx/router-store": "^5.2.0",
