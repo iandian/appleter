@@ -193,10 +193,11 @@
     "@angular/core": "~5.2.9",
     "@angular/forms": "~5.2.9",
     "@angular/http": "~5.2.9",
+    
     "@angular/platform-browser": "~5.2.9",
     "@angular/platform-browser-dynamic": "~5.2.9",
     "@angular/router": "~5.2.9",
-    "@angular/service-worker": "~5.2.9",
+    "@angular/service-worker": "1.0.0-beta.13",
     "@asymmetrik/ngx-leaflet": "3.0.2",
     "@nebular/auth": "2.0.0-rc.6",
     "@nebular/theme": "2.0.0-rc.6",
