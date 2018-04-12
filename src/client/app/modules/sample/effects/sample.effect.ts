@@ -4,8 +4,15 @@ import { Injectable } from '@angular/core';
 // libs
 import { Action } from '@ngrx/store';
 import { Actions, Effect, ofType } from '@ngrx/effects';
-import { Observable } from 'rxjs/Observable';
-
+import { asyncScheduler, empty, Observable, of } from 'rxjs';
+import {
+  catchError,
+  debounceTime,
+  map,
+  skip,
+  switchMap,
+  takeUntil,
+} from 'rxjs/operators';
 // module
 import { NameListService } from '../services/name-list.service';
 import { NameList } from '../actions/index';

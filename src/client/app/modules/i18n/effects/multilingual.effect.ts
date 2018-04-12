@@ -5,8 +5,15 @@ import { Injectable, Inject } from '@angular/core';
 import { Action } from '@ngrx/store';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { includes, map } from 'lodash';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
+import { asyncScheduler, empty, Observable, of } from 'rxjs';
+import {
+  catchError,
+  debounceTime,
+  map,
+  skip,
+  switchMap,
+  takeUntil,
+} from 'rxjs/operators';
 
 // module
 import { MultilingualService, Languages } from '../services/multilingual.service';
