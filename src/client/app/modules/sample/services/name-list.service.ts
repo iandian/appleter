@@ -10,7 +10,7 @@ import { Config } from '../../core/index';
 import { Analytics, AnalyticsService } from '../../analytics/index';
 
 // module
-import { NameList } from '../actions/index';
+import * as NameList from '../actions/index';
 
 @Injectable()
 export class NameListService extends Analytics {

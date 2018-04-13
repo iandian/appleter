@@ -16,7 +16,7 @@ import {
 } from 'rxjs/operators';
 // module
 import { NameListService } from '../services/name-list.service';
-import { NameList } from '../actions/index';
+import * as NameList from '../actions/index';
 
 @Injectable()
 export class SampleEffects {
