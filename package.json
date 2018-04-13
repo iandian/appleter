@@ -234,7 +234,7 @@
     "pace-js": "1.0.2",
     "roboto-fontface": "0.9.0",
     "reflect-metadata": "^0.1.8",
-    "rxjs": "6.0.0-tactical-rc.1",
+    "rxjs": "6.0.0-beta.3",
     "rxjs-compat": "^6.0.0-beta.1",
     "systemjs": "0.21.2",
     "tinymce": "4.7.10",
