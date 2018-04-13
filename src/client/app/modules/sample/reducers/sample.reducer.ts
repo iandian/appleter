@@ -9,12 +9,12 @@ export function reducer(
   action: NameList.NameListActionsUnion
 ): ISampleState {
   switch (action.type) {
-    case NameList.NameListActionTypes.INITIALIZED:
+    case NameList.NameListActionTypes.Initialized:
       return (<any>Object).assign({}, state, {
         names: action.payload
       });
 
-    case NameList.NameListActionTypes.NAME_ADDED:
+    case NameList.NameListActionTypes.Name_added:
       return (<any>Object).assign({}, state, {
         names: [...state.names, action.payload]
       });
