@@ -4,7 +4,7 @@ import { Injectable, Inject } from '@angular/core';
 // libs
 import { Action } from '@ngrx/store';
 import { Actions, Effect, ofType } from '@ngrx/effects';
-import { includes, map } from 'lodash';
+import { includes, map as lodashmap } from 'lodash';
 import { asyncScheduler, empty, Observable, of } from 'rxjs';
 import {
   catchError,
@@ -26,7 +26,7 @@ export class MultilingualEffects {
     ofType(multilingual.ActionTypes.CHANGE),
     map(action => {
       let lang = action.payload;
-      if (includes(map(this.languages, 'code'), lang)) {
+      if (includes(lodashmap(this.languages, 'code'), lang)) {
         let langChangedAction = new multilingual.LangChangedAction(lang);
         // track analytics
         this.multilangService.track(langChangedAction.type, { label: langChangedAction.payload });

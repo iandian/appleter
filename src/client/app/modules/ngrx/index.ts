@@ -59,6 +59,16 @@ export const reducers: ActionReducerMap<IAppState> = {
 export const getMultilingualState = createFeatureSelector<IAppState>('i18n');
 export const getNameListState = createFeatureSelector<IAppState>('sample');
 
+export const getMultilingualEntitiesState = createSelector(
+  getMultilingualState,
+  state => state.i18n
+);
 
-export const getLang = createSelector(getMultilingualState, fromMultilingual.getLang);
-export const getNames = createSelector(getNameListState, fromSample.getNames);
+export const getNameListEntitiesState = createSelector(
+  getNameListState,
+  state => state.sample
+);
+
+
+export const getLang = createSelector(getMultilingualEntitiesState, fromMultilingual.getLang);
+export const getNames = createSelector(getNameListEntitiesState, fromSample.getNames);

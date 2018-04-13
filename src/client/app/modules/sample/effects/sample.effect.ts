@@ -11,6 +11,7 @@ import {
   map,
   skip,
   switchMap,
+  startWith,
   takeUntil,
 } from 'rxjs/operators';
 // module
@@ -38,9 +39,8 @@ export class SampleEffects {
 
   @Effect() add$: Observable<Action> = this.actions$.pipe(
     ofType(NameList.ActionTypes.ADD),
-    map(action => {
-      let name = action.payload;
-      // analytics
+    map(action => action.payload),
+    switchMap(name => {
       this.nameListService.track(NameList.ActionTypes.NAME_ADDED, { label: name });
       return new NameList.NameAddedAction(name);
     })

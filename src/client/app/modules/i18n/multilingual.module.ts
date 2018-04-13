@@ -25,13 +25,15 @@ export function translateLoaderFactory(httpClient: HttpClient) {
 @NgModule({
   imports: [
     CommonModule,
-    HttpModule,
+    HttpClientModule,
     FormsModule,
-    TranslateModule.forRoot([{
-      provide: TranslateLoader,
-      deps: [HttpClient],
-      useFactory: (translateLoaderFactory)
-    }]),
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: translateLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ],
   declarations: [
     ...MULTILANG_COMPONENTS
