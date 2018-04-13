@@ -6,7 +6,7 @@ import { Observable } from 'rxjs/Observable';
 // app
 import { RouterExtensions, Config } from '../../modules/core/index';
 import { IAppState, getNames } from '../../modules/ngrx/index';
-import { NameList } from '../../modules/sample/index';
+import * as NameListAction from '../../modules/sample/actions/index';
 
 @Component({
   moduleId: module.id,
@@ -32,7 +32,7 @@ export class HomeComponent implements OnInit {
    * @returns return false to prevent default form submit behavior to refresh the page.
    */
   addName(): boolean {
-    this.store.dispatch(new NameList.AddAction(this.newName));
+    this.store.dispatch(new NameListAction.AddAction(this.newName));
     this.newName = '';
     return false;
   }

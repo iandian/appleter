@@ -1,14 +1,12 @@
 // libs
 import { Action } from '@ngrx/store';
 
-// module
-import { CATEGORY } from '../common/category.common';
 
 
 export enum MultilingualActionTypes {
-  Change = `[${CATEGORY}] Change`,
-  Lang_changed = `[${CATEGORY}] Lang Changed`,
-  Lang_unsupported = `[${CATEGORY}] Lang Unsupported`,
+  Change = '[Multilingual] Change',
+  Lang_changed = '[Multilingual] Lang Changed',
+  Lang_unsupported = '[Multilingual] Lang Unsupported',
 }
 
 /**
