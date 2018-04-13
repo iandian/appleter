@@ -23,7 +23,7 @@ import * as multilingual from '../actions/multilingual.action';
 export class MultilingualEffects {
 
   @Effect() change$: Observable<Action> = this.actions$.pipe(
-    ofType(multilingual.ActionTypes.CHANGE),
+    ofType(multilingual.MultilingualActionTypes.Change),
     map(action => {
       let lang = action.payload;
       if (includes(lodashmap(this.languages, 'code'), lang)) {

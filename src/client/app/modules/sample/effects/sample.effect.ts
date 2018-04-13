@@ -26,7 +26,7 @@ export class SampleEffects {
    * the effect immediately on startup.
    */
   @Effect() init$: Observable<Action> = this.actions$.pipe(
-    ofType(NameList.ActionTypes.INIT),
+    ofType(NameList.NameListActionTypes.Init),
     startWith(new NameList.InitAction),
     switchMap(() => this.nameListService.getNames()),
     map(payload => {
@@ -38,10 +38,10 @@ export class SampleEffects {
   );
 
   @Effect() add$: Observable<Action> = this.actions$.pipe(
-    ofType(NameList.ActionTypes.ADD),
+    ofType(NameList.NameListActionTypes.Add),
     map(action => action.payload),
     switchMap(name => {
-      this.nameListService.track(NameList.ActionTypes.NAME_ADDED, { label: name });
+      this.nameListService.track(NameList.NameListActionTypes.Name_added, { label: name });
       return new NameList.NameAddedAction(name);
     })
   );

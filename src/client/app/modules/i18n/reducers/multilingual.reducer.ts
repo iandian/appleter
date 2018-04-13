@@ -1,13 +1,13 @@
 // module
 import { IMultilingualState, initialState } from '../states/multilingual.state';
-import { Actions, ActionTypes } from '../actions/multilingual.action';
+import { MultilingualActionsUnion, MultilingualActionTypes } from '../actions/multilingual.action';
 
 export function reducer(
     state: IMultilingualState = initialState,
-    action: Actions
+    action: MultilingualActionsUnion
 ): IMultilingualState {
   switch (action.type) {
-    case ActionTypes.LANG_CHANGED:
+    case MultilingualActionTypes.Lang_changed:
       if (state.lang !== action.payload)
         return (<any>Object).assign({}, state, {
             lang: action.payload

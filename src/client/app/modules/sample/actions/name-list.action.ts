@@ -1,5 +1,4 @@
 import { Action } from '@ngrx/store';
-import { type } from '../../core/utils/index';
 
 /**
  * Each action should be namespaced
@@ -10,29 +9,13 @@ export namespace NameList {
   // Category to uniquely identify the actions
   export const CATEGORY: string = 'NameList';
 
-  /**
-   * For each action type in an action group, make a simple
-   * enum object for all of this group's action types.
-   *
-   * The 'type' utility function coerces strings into string
-   * literal types and runs a simple check to guarantee all
-   * action types in the application are unique.
-   */
-  export interface INameListActions {
-    INIT: string;
-    INITIALIZED: string;
-    INIT_FAILED: string;
-    ADD: string;
-    NAME_ADDED: string;
+  export enum NameListActionTypes {
+    Init = `[${CATEGORY}] Init`,
+    Initialized = `[${CATEGORY}] Initialized`,
+    Init_failed = `[${CATEGORY}] Init Failed`,
+    Add = `[${CATEGORY}] Add`,
+    Name_added = `[${CATEGORY}] Name Added`,
   }
-
-  export const ActionTypes: INameListActions = {
-    INIT: type(`${CATEGORY} Init`),
-    INITIALIZED: type(`${CATEGORY} Initialized`),
-    INIT_FAILED: type(`${CATEGORY} Init Failed`),
-    ADD: type(`${CATEGORY} Add`),
-    NAME_ADDED: type(`${CATEGORY} Name Added`)
-  };
 
   /**
    * Every action is comprised of at least a type and an optional
@@ -42,29 +25,29 @@ export namespace NameList {
    * See Discriminated Unions: https://www.typescriptlang.org/docs/handbook/advanced-types.html#discriminated-unions
    */
   export class InitAction implements Action {
-    type = ActionTypes.INIT;
+    type = NameListActionTypes.Init;
     payload: string = null;
   }
 
   export class InitializedAction implements Action {
-    type = ActionTypes.INITIALIZED;
+    type = NameListActionTypes.Initialized;
 
     constructor(public payload: Array<string>) { }
   }
 
   export class InitFailedAction implements Action {
-    type = ActionTypes.INIT_FAILED;
+    type = NameListActionTypes.Init_failed;
     payload: string = null;
   }
 
   export class AddAction implements Action {
-    type = ActionTypes.ADD;
+    type = NameListActionTypes.Add;
 
     constructor(public payload: string) { }
   }
 
   export class NameAddedAction implements Action {
-    type = ActionTypes.NAME_ADDED;
+    type = NameListActionTypes.Name_added;
 
     constructor(public payload: string) { }
   }
@@ -73,7 +56,7 @@ export namespace NameList {
    * Export a type alias of all actions in this action group
    * so that reducers can easily compose action types
    */
-  export type Actions
+  export type NameListActionsUnion
     = InitAction
     | InitializedAction
     | InitFailedAction

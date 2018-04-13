@@ -1,31 +1,15 @@
 // libs
 import { Action } from '@ngrx/store';
 
-// app
-import { type } from '../../core/utils/type';
-
 // module
 import { CATEGORY } from '../common/category.common';
 
-/**
- * For each action type in an action group, make a simple
- * enum object for all of this group's action types.
- *
- * The 'type' utility function coerces strings into string
- * literal types and runs a simple check to guarantee all
- * action types in the application are unique.
- */
-export interface IMultilingualActions {
-  CHANGE: string;
-  LANG_CHANGED: string;
-  LANG_UNSUPPORTED: string;
-}
 
-export const ActionTypes: IMultilingualActions = {
-  CHANGE:           type(`[${CATEGORY}] Change`),
-  LANG_CHANGED:     type(`[${CATEGORY}] Lang Changed`),
-  LANG_UNSUPPORTED: type(`[${CATEGORY}] Lang Unsupported`)
-};
+export enum MultilingualActionTypes {
+  Change = `[${CATEGORY}] Change`,
+  Lang_changed = `[${CATEGORY}] Lang Changed`,
+  Lang_unsupported = `[${CATEGORY}] Lang Unsupported`,
+}
 
 /**
  * Every action is comprised of at least a type and an optional
@@ -35,19 +19,19 @@ export const ActionTypes: IMultilingualActions = {
  * See Discriminated Unions: https://www.typescriptlang.org/docs/handbook/advanced-types.html#discriminated-unions
  */
 export class ChangeAction implements Action {
-  type = ActionTypes.CHANGE;
+  readonly type = MultilingualActionTypes.Change;
 
   constructor(public payload: string) { }
 }
 
 export class LangChangedAction implements Action {
-  type = ActionTypes.LANG_CHANGED;
+  readonly type = MultilingualActionTypes.Lang_changed;
 
   constructor(public payload: string) { }
 }
 
 export class LangUnsupportedAction implements Action {
-  type = ActionTypes.LANG_UNSUPPORTED;
+  readonly type = MultilingualActionTypes.Lang_unsupported;
 
   constructor(public payload: string) { }
 }
@@ -56,7 +40,7 @@ export class LangUnsupportedAction implements Action {
  * Export a type alias of all actions in this action group
  * so that reducers can easily compose action types
  */
-export type Actions
+export type MultilingualActionsUnion
   = ChangeAction
   | LangChangedAction
   | LangUnsupportedAction;
