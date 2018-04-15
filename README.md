@@ -1,19 +1,22 @@
 issues:
   1: Failed to find target with hash string 'android-23' when build android
     https://github.com/NativeScript/NativeScript/issues/4004
-    
+
     resolution:
     nativescript\src\App_Resources\Android\app.gradle add one line
-    
+
         compileSdkVersion 25
-    
+
   2: ERROR in ./app.aot.ts Module not found: Error: Can't resolve './native.module.ngfactory' in '/app/nativescript/app'
     https://github.com/NathanWalker/angular-seed-advanced/issues/406
-    
+
     resolution:
     nativescript\package.json  update  "@ngtools/webpack": "1.7.4"
 
-Please read [this notice first](https://github.com/NathanWalker/angular-seed-advanced/issues/474) before continuing.
+  3: Property 'payload' does not exist on type 'Action'.
+    https://github.com/ngrx/platform/issues/31
+
+http://npm.github.io/how-npm-works-docs/npm3/how-npm3-works.html
 
 ![Angular Seed Advanced](https://cdn.filestackcontent.com/LSWpUEEGQiOdCpv9t6Ri?v=0)
 
@@ -28,9 +31,9 @@ This is an **advanced** seed project for Angular apps based on [Minko Gechev's](
 #### Integration with:
 - [ngrx/store](https://github.com/ngrx/store) RxJS powered state management, inspired by **Redux**
 - [ngrx/effects](https://github.com/ngrx/effects) Side effect model for @ngrx/store
-- [ngx-translate](https://github.com/ngx-translate/core) for i18n 
+- [ngx-translate](https://github.com/ngx-translate/core) for i18n
   - Usage is optional but on by default
-  - Up to you and your team how you want to utilize it. It can be easily removed if not needed. 
+  - Up to you and your team how you want to utilize it. It can be easily removed if not needed.
 - [angulartics2](https://github.com/angulartics/angulartics2) Vendor-agnostic analytics for Angular applications.
   - Out of box support for [Segment](https://segment.com/)
     - When using the seed, be sure to change your `write_key` [here](https://github.com/NathanWalker/angular-seed-advanced/blob/master/src/client/index.html#L24)
@@ -67,7 +70,7 @@ This is an **advanced** seed project for Angular apps based on [Minko Gechev's](
   + [Production build and deployment](#production-build-and-deployment)
 - [Contributing](#contributing)
 - [License](#license)
-  
+
 **Advice**: If your project is intended to target a single platform (i.e, web only), then [angular-seed](https://github.com/mgechev/angular-seed) is likely more than suitable for your needs. However if your project goals are to target multiple platforms (web, native mobile and native desktop), with powerful out of the box library support and highly configurable/flexible testing options, then you might want to keep reading.
 
 **Too Much?!**: Don't worry it's ok, I completely understand. There is a simplified version of this seed which still allows web + mobile + desktop **without** the extra libraries and features like ngrx or analytics. Give this a shot: https://github.com/jlooper/angular-starter
@@ -129,7 +132,7 @@ The mobile app is provided via [NativeScript](https://www.nativescript.org/), an
 #### Setup
 
 ```
-npm install -g nativescript 
+npm install -g nativescript
 ```
 
 #### Dev Workflow
@@ -138,7 +141,7 @@ You can make changes to files in `src/client/app` or `nativescript/src/app` fold
 
 Create `.tns.html` and `.tns.scss` NativeScript view files for every web component view file you have. You will see an example of the `app.component.html` as a [NativeScript view file here](https://github.com/NathanWalker/angular-seed-advanced/blob/master/src/client/app/components/app.component.tns.html).
 
-The root module for the mobile app is `nativescript/src/native.module.ts`: `NativeModule`. 
+The root module for the mobile app is `nativescript/src/native.module.ts`: `NativeModule`.
 
 #### Run
 
@@ -316,7 +319,7 @@ A documentation of the provided tools can be found in [tools/README.md](tools/RE
 * how to control amount of information logged?
   - If a log target is derrived from ``LogTargetBase`` the target can be configured to filter messages by importance. You can pass ``minLogLevel`` as ``LogTargetOptions``
   - ``LogService`` additionally uses ``Config.Debug`` switches as a global treshhold to further filter verbosity of the log messages.
-   
+
 * how to implement custom log target?
   - Derrive from ``LogTargetBase`` class and implement ``writeToLog`` method (see ``ConsoleTarget``). You can configure several log targets at a time inside main application module. For example:
   ```javascript
@@ -391,7 +394,7 @@ If you have any suggestions to this workflow, please post [here](https://github.
 
 The application provides full Docker support. You can use it for both development as well as production builds and deployments.
 
-## How to build and start the dockerized version of the application 
+## How to build and start the dockerized version of the application
 
 The Dockerization infrastructure is described in the `docker-compose.yml` (respectively `docker-compose.production.yml`.
 The application consists of two containers:

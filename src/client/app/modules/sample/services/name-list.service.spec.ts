@@ -20,7 +20,7 @@ const testModuleConfig = () => {
   TestBed.configureTestingModule({
     imports: [
       FormsModule, AnalyticsModule,
-      StoreModule.provideStore({ sample: reducer }),
+      StoreModule.forRoot({ sample: reducer }),
       EffectsTestingModule,
       HttpModule, RouterTestingModule
     ],

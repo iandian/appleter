@@ -65,4 +65,3 @@ function file2moduleName(filePath) {
     .replace(/^\/base\//, '')
     .replace(/\.js$/, '');
 }
-

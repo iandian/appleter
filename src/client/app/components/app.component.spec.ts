@@ -37,7 +37,7 @@ const testModuleConfig = () => {
         Angulartics2Segment
       ]),
       MultilingualModule,
-      StoreModule.provideStore({ }),
+      StoreModule.forRoot({ }),
       RouterTestingModule.withRoutes(config)
     ],
     declarations: [

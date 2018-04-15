@@ -5,7 +5,11 @@ import { Injectable, Inject } from '@angular/core';
 import { Action } from '@ngrx/store';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { includes, map as lodashmap } from 'lodash';
-import { asyncScheduler, empty, Observable, of } from 'rxjs';
+import { Observable } from 'rxjs/Observable';
+import { Scheduler } from 'rxjs/Scheduler';
+import { async } from 'rxjs/scheduler/async';
+import { empty } from 'rxjs/observable/empty';
+import { of } from 'rxjs/observable/of';
 import {
   catchError,
   debounceTime,
@@ -25,7 +29,7 @@ export class MultilingualEffects {
   @Effect() change$: Observable<Action> = this.actions$.pipe(
     ofType(multilingual.MultilingualActionTypes.Change),
     map(action => {
-      let lang = action.payload;
+      let lang = (action as any).payload;
       if (includes(lodashmap(this.languages, 'code'), lang)) {
         let langChangedAction = new multilingual.LangChangedAction(lang);
         // track analytics

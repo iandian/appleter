@@ -36,7 +36,7 @@ const testModuleConfig = (languages?: Array<ILang>) => {
       RouterTestingModule,
       AnalyticsModule,
       MultilingualModule,
-      StoreModule.provideStore({ i18n: reducer })
+      StoreModule.forRoot({ i18n: reducer })
     ],
     declarations: [TestComponent],
     providers

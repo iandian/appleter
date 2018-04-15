@@ -49,15 +49,15 @@ export function main() {
         }));
         t.it('pageTrack', t.inject([AnalyticsService, Angulartics2Segment], (analyticsService:any, segment:any) => {
           t.spyOn(segment, 'pageTrack');
-          analyticsService.pageTrack('/testing', { });
-          t.e(segment.pageTrack).toHaveBeenCalledWith('/testing', {});
+          analyticsService.pageTrack('/testing');
+          t.e(segment.pageTrack).toHaveBeenCalledWith('/testing');
         }));
         t.it('pageTrack devMode: ON', t.inject([AnalyticsService, Angulartics2Segment], (analyticsService:any, segment:any) => {
           t.spyOn(segment, 'pageTrack');
 
           // dev mode: shouldn't track anything
           analyticsService.devMode(true);
-          analyticsService.pageTrack('/testing', { });
+          analyticsService.pageTrack('/testing');
           t.e(segment.pageTrack).not.toHaveBeenCalled();
         }));
         t.it('identify', t.inject([AnalyticsService, Angulartics2Segment], (analyticsService:any, segment:any) => {

@@ -34,8 +34,8 @@ const testModuleConfig = (options?: any) => {
       Angulartics2Module.forRoot([
         Angulartics2Segment
       ]),
-      StoreModule.provideStore({ i18n: reducer }),
-      EffectsModule.run(MultilingualEffects),
+      StoreModule.forRoot({ i18n: reducer }),
+      EffectsModule.forRoot(MultilingualEffects),
       RouterTestingModule
     ],
     providers: [

@@ -2,7 +2,8 @@
 import { NgModule } from '@angular/core';
 
 // lib
-import { Angulartics2Module, Angulartics2Segment } from 'angulartics2';
+import { Angulartics2Module } from 'angulartics2';
+import { Angulartics2Segment } from 'angulartics2/segment';
 
 // module
 import { ANALYTICS_PROVIDERS } from './services/index';

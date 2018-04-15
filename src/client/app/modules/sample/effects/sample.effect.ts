@@ -4,7 +4,11 @@ import { Injectable } from '@angular/core';
 // libs
 import { Action } from '@ngrx/store';
 import { Actions, Effect, ofType } from '@ngrx/effects';
-import { asyncScheduler, empty, Observable, of } from 'rxjs';
+import { Observable } from 'rxjs/Observable';
+import { Scheduler } from 'rxjs/Scheduler';
+import { async } from 'rxjs/scheduler/async';
+import { empty } from 'rxjs/observable/empty';
+import { of } from 'rxjs/observable/of';
 import {
   catchError,
   debounceTime,
@@ -39,8 +43,8 @@ export class SampleEffects {
 
   @Effect() add$: Observable<Action> = this.actions$.pipe(
     ofType(NameList.NameListActionTypes.Add),
-    map(action => action.payload),
-    switchMap(name => {
+    map(action => (action as any).payload),
+    map(name => {
       this.nameListService.track(NameList.NameListActionTypes.Name_added, { label: name });
       return new NameList.NameAddedAction(name);
     })
