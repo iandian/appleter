@@ -19,8 +19,8 @@ jasmine.DEFAULT_TIMEOUT_INTERVAL = 1000;
 __karma__.loaded = function () { };
 
 Promise.all([
-  System.import('@angular/core/testing'),
-  System.import('@angular/platform-browser-dynamic/testing')
+  SystemJS.import('@angular/core/testing'),
+  SystemJS.import('@angular/platform-browser-dynamic/testing')
 ]).then(function (providers) {
   var testing = providers[0];
   var testingBrowser = providers[1];
@@ -35,7 +35,7 @@ Promise.all([
       .filter(onlySpecFiles)
       .map(file2moduleName)
       .map(function (path) {
-        return System.import(path).then(function (module) {
+        return SystemJS.import(path).then(function (module) {
           if (module.hasOwnProperty('main')) {
             module.main();
           } else {

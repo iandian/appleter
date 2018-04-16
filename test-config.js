@@ -1,4 +1,4 @@
 // Load our SystemJS configuration.
-System.config({
+SystemJS.config({
   baseURL: '/base/'
 });
