@@ -450,7 +450,6 @@ export class SeedConfig {
       '@angular/router/testing': 'node_modules/@angular/router/bundles/router-testing.umd.js',
 
       'app/*': '/app/*',
-      'main.web': 'main.web.js'
       // For test config
       'dist/dev/*': '/base/dist/dev/*',
       '*': 'node_modules/*'
