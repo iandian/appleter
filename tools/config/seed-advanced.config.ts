@@ -127,6 +127,13 @@ export class SeedAdvancedConfig extends SeedConfig {
         }
       },
       {
+        name: 'rxjs',
+        packageMeta: {
+          main: 'bundles/Rx.js',
+          defaultExtension: 'js'
+        }
+      },
+      {
         name: '@ngx-translate/http-loader',
         packageMeta: {
           main: 'bundles/ngx-translate-http-loader.umd.js',
@@ -138,6 +145,14 @@ export class SeedAdvancedConfig extends SeedConfig {
         path: 'node_modules/@angular/common',
         packageMeta: {
           main: 'bundles/common-http.umd.js',
+          defaultExtension: 'js'
+        }
+      },
+      {
+        name: 'tslib',
+        path: 'node_modules/tslib',
+        packageMeta: {
+          main: 'tslib.js',
           defaultExtension: 'js'
         }
       },
