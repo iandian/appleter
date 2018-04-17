@@ -74,9 +74,16 @@ export class SeedAdvancedConfig extends SeedConfig {
         }
       },
       {
-        name: '@ngrx/core',
+        name: '@ngrx/db',
         packageMeta: {
-          main: 'bundles/core.umd.js',
+          main: 'bundles/db.umd.js',
+          defaultExtension: 'js'
+        }
+      },
+      {
+        name: '@ngrx/router-store',
+        packageMeta: {
+          main: 'bundles/router-store.umd.js',
           defaultExtension: 'js'
         }
       },
@@ -91,6 +98,13 @@ export class SeedAdvancedConfig extends SeedConfig {
         name: '@ngrx/effects',
         packageMeta: {
           main: 'bundles/effects.umd.js',
+          defaultExtension: 'js'
+        }
+      },
+      {
+        name: '@ngrx/entity',
+        packageMeta: {
+          main: 'bundles/entity.umd.js',
           defaultExtension: 'js'
         }
       },
