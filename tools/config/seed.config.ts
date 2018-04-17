@@ -500,6 +500,10 @@ export class SeedConfig {
         main: 'bundles/common.umd.js',
         defaultExtension: 'js'
       },
+      '@angular/common/http': {
+        main: 'bundles/common-http.umd.js',
+        defaultExtension: 'js'
+      },
       '@angular/compiler': {
         main: 'bundles/compiler.umd.js',
         defaultExtension: 'js'

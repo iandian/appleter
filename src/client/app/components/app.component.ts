@@ -1,5 +1,4 @@
 // any operators needed throughout your application
-import './operators';
 
 // libs
 import { Component, OnInit } from '@angular/core';
