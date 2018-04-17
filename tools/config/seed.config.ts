@@ -425,6 +425,7 @@ export class SeedConfig {
    */
   SYSTEM_CONFIG_DEV: any = {
     defaultExtension: true,
+    defaultJSExtensions: true,
     paths: {
       [this.BOOTSTRAP_MODULE]: `${this.APP_BASE}${this.BOOTSTRAP_MODULE}`,
       '@angular/animations': 'node_modules/@angular/animations/bundles/animations.umd.js',
