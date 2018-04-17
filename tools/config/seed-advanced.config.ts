@@ -134,6 +134,14 @@ export class SeedAdvancedConfig extends SeedConfig {
         }
       },
       {
+        name: '@angular/common/http',
+        path: 'node_modules/@angular/common',
+        packageMeta: {
+          main: 'bundles/common-http.umd.js',
+          defaultExtension: 'js'
+        }
+      },
+      {
         name: 'angulartics2',
         packageMeta: {
           main: 'bundles/core.umd.js',
@@ -142,6 +150,7 @@ export class SeedAdvancedConfig extends SeedConfig {
       },
       {
         name: 'angulartics2/segment',
+        path: 'node_modules/angulartics2',
         packageMeta: {
           main: 'bundles/segment.umd.js',
           defaultExtension: 'js'
