@@ -455,7 +455,8 @@ export class SeedConfig {
       '*': 'node_modules/*'
     },
     map: {
-        'main.web': '/main.web.js'
+        'main.web': '/main.web.js',
+        'web.module': '/web.module.js'
     },
     packages: {
     }
