@@ -424,7 +424,6 @@ export class SeedConfig {
    * @type {any}
    */
   SYSTEM_CONFIG_DEV: any = {
-    defaultExtension: true,
     defaultJSExtensions: true,
     paths: {
       [this.BOOTSTRAP_MODULE]: `${this.APP_BASE}${this.BOOTSTRAP_MODULE}`,
@@ -454,10 +453,6 @@ export class SeedConfig {
       // For test config
       'dist/dev/*': '/base/dist/dev/*',
       '*': 'node_modules/*'
-    },
-    map: {
-        'main.web': '/main.web.js',
-        'web.module': '/web.module.js'
     },
     packages: {
     }
