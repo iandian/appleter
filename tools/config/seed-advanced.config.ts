@@ -158,6 +158,7 @@ export class SeedAdvancedConfig extends SeedConfig {
       },
       {
         name: 'angulartics2',
+        path: 'node_modules/angulartics2',
         packageMeta: {
           main: 'bundles/core.umd.js',
           defaultExtension: 'js'

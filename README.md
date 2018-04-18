@@ -15,6 +15,12 @@ issues:
 
   3: Property 'payload' does not exist on type 'Action'.
     https://github.com/ngrx/platform/issues/31
+    
+  4: ./node_modules/.bin/gulp build.bundle.rxjs
+  
+  5: systemjs config defaultJSExtensions true so package will add .js extension and also set additionalPackages: ExtendPackages so other omit package can be found in there path
+  
+  6: first resolve npm start error, then resolve client error
 
 http://npm.github.io/how-npm-works-docs/npm3/how-npm3-works.html
 
