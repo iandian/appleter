@@ -4,6 +4,7 @@ import { Http } from '@angular/http';
 
 // libs
 import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map'
 
 // app
 import { Config } from '../../core/index';
