@@ -536,7 +536,10 @@ export class SeedConfig {
         main: 'bundles/service-worker.umd.js',
         defaultExtension: 'js'
       },
-      "/angulartics2": {"defaultExtension": "js"},
+      'angulartics2': {
+        main: 'bundles/core.umd.js',
+        defaultExtension: 'js'
+      },
     }
   };
 
