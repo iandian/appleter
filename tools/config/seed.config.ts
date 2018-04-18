@@ -448,6 +448,8 @@ export class SeedConfig {
       '@angular/platform-browser-dynamic/testing':
       'node_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic-testing.umd.js',
       '@angular/router/testing': 'node_modules/@angular/router/bundles/router-testing.umd.js',
+      'angulartics2': 'node_modules/angulartics2/bundles/core.umd.js',
+      'angulartics2/segment': 'node_modules/angulartics2/bundles/segment.umd.js',
 
       'app/*': '/app/*',
       // For test config
