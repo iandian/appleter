@@ -157,13 +157,20 @@ export class SeedAdvancedConfig extends SeedConfig {
         }
       },
       {
-        name: 'angulartics2/segment',
-        path: 'node_modules/angulartics2',
+        name: 'angulartics2',
         packageMeta: {
-          main: 'bundles/segment.umd.js',
+          main: 'bundles/core.umd.js',
           defaultExtension: 'js'
         }
       },
+      // {
+      //   name: 'angulartics2/segment',
+      //   path: 'node_modules/angulartics2',
+      //   packageMeta: {
+      //     main: 'bundles/segment.umd.js',
+      //     defaultExtension: 'js'
+      //   }
+      // },
       {
         name: 'ngrx-store-freeze',
         path: 'node_modules/ngrx-store-freeze/dist/index.js'
