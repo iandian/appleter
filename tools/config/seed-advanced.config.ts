@@ -156,6 +156,14 @@ export class SeedAdvancedConfig extends SeedConfig {
           defaultExtension: 'js'
         }
       },
+      {
+        name: '@angular/cdk',
+        path: 'node_modules/@angular/cdk',
+        packageMeta: {
+          main: 'bundles/cdk.umd.js',
+          defaultExtension: 'js'
+        }
+      },
       // {
       //   name: 'angulartics2',
       //   packageMeta: {
