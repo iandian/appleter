@@ -13,7 +13,7 @@ let template: any;
 let menu: any;
 
 // app
-import { DesktopConfig } from './app/modules/electron/index';
+// import { DesktopConfig } from './app/modules/electron/index';
 
 // Sample
 // You would need a valid `submitURL` to use
@@ -53,21 +53,21 @@ app.on('ready', () => {
 
   let appTitle: string = `Angular Seed Advanced`;
 
-  let langMenu: any = {
-    label: 'Language',
-    submenu: []
-  };
-  for (var lang of DesktopConfig.GET_SUPPORTED_LANGUAGES()) {
-    let code = lang.code;
-    let langOption = {
-      label: lang.title,
-      click:() => {
-        console.log(`Change lang: ${code}`);
-        mainWindow.webContents.executeJavaScript(`window.dispatchEvent(new CustomEvent('changeLang', {detail: { value: '${code}'} }));`);
-      }
-    };
-    langMenu.submenu.push(langOption);
-  }
+  // let langMenu: any = {
+  //   label: 'Language',
+  //   submenu: []
+  // };
+  // for (var lang of DesktopConfig.GET_SUPPORTED_LANGUAGES()) {
+  //   let code = lang.code;
+  //   let langOption = {
+  //     label: lang.title,
+  //     click:() => {
+  //       console.log(`Change lang: ${code}`);
+  //       mainWindow.webContents.executeJavaScript(`window.dispatchEvent(new CustomEvent('changeLang', {detail: { value: '${code}'} }));`);
+  //     }
+  //   };
+  //   langMenu.submenu.push(langOption);
+  // }
 
   let helpMenu: any = {
     label: 'Help',
@@ -215,7 +215,7 @@ app.on('ready', () => {
             selector: 'arrangeInFront:'
           }]
       },
-      langMenu,
+      // langMenu,
       helpMenu];
 
     menu = Menu.buildFromTemplate(template);
@@ -261,7 +261,7 @@ app.on('ready', () => {
             }
           }]
       },
-      langMenu,
+      // langMenu,
       helpMenu];
     menu = Menu.buildFromTemplate(template);
     mainWindow.setMenu(menu);
