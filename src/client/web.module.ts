@@ -11,7 +11,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { DBModule } from '@ngrx/db';
 import {
   StoreRouterConnectingModule,
-  // RouterStateSerializer,
+  RouterStateSerializer,
 } from '@ngrx/router-store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { TranslateLoader } from '@ngx-translate/core';
@@ -28,6 +28,7 @@ import { AnalyticsModule } from './app/modules/analytics/index';
 import { MultilingualModule, Languages, translateLoaderFactory, MultilingualEffects } from './app/modules/i18n/index';
 import { SampleModule, SampleEffects } from './app/modules/sample/index';
 import { reducers } from './app/modules/ngrx/index';
+import { CustomRouterStateSerializer } from './app/modules/shared/utils';
 
 // config
 Config.PLATFORM_TARGET = Config.PLATFORMS.WEB;
@@ -97,7 +98,7 @@ if (String('<%= BUILD_TYPE %>') === 'dev') {
       */
       stateKey: 'router',
     }),
-    EffectsModule.forRoot([MultilingualEffects, SampleEffects]),
+    EffectsModule.forRoot([]),
     DBModule.provideDB(schema),
     // dev environment only imports
     DEV_IMPORTS,
@@ -106,6 +107,7 @@ if (String('<%= BUILD_TYPE %>') === 'dev') {
     APP_COMPONENTS
   ],
   providers: [
+    { provide: RouterStateSerializer, useClass: CustomRouterStateSerializer },
     {
       provide: APP_BASE_HREF,
       useValue: '<%= APP_BASE %>'

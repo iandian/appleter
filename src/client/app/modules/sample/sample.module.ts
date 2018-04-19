@@ -4,11 +4,16 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 
 // app
 import { SharedModule } from '../shared/index';
 import { SAMPLE_PROVIDERS } from './services/index';
 import { MultilingualModule } from '../i18n/multilingual.module';
+import { reducer } from './reducers';
+import { SampleEffects } from './effects';
+
 
 /**
  * Do not specify providers for modules that might be imported by a lazy loaded module.
@@ -18,6 +23,8 @@ import { MultilingualModule } from '../i18n/multilingual.module';
   imports: [
     SharedModule,
     MultilingualModule,
+    StoreModule.forFeature('sample', reducer),
+    EffectsModule.forFeature([SampleEffects]),
   ],
   providers: [
     ...SAMPLE_PROVIDERS

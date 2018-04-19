@@ -3,6 +3,8 @@ import { NgModule, ModuleWithProviders, Optional, SkipSelf, CUSTOM_ELEMENTS_SCHE
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 
 // libs
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
@@ -12,6 +14,8 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { Config } from '../core/index';
 import { MULTILANG_COMPONENTS } from './components/index';
 import { MULTILANG_PROVIDERS } from './services/index';
+import { reducer } from './reducers';
+import { MultilingualEffects } from './effects';
 
 // for AoT compilation
 export function translateLoaderFactory(httpClient: HttpClient) {
@@ -27,6 +31,8 @@ export function translateLoaderFactory(httpClient: HttpClient) {
     CommonModule,
     HttpClientModule,
     FormsModule,
+    StoreModule.forFeature('i18n', reducer),
+    EffectsModule.forFeature([MultilingualEffects]),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
