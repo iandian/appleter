@@ -11,8 +11,8 @@ import { EffectsModule } from '@ngrx/effects';
 import { SharedModule } from '../shared/index';
 import { SAMPLE_PROVIDERS } from './services/index';
 import { MultilingualModule } from '../i18n/multilingual.module';
-import { reducer } from './reducers';
-import { SampleEffects } from './effects';
+import { reducer } from './reducers/index';
+import { SampleEffects } from './effects/index';
 
 
 /**

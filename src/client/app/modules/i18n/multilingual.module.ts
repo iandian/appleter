@@ -14,8 +14,8 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { Config } from '../core/index';
 import { MULTILANG_COMPONENTS } from './components/index';
 import { MULTILANG_PROVIDERS } from './services/index';
-import { reducer } from './reducers';
-import { MultilingualEffects } from './effects';
+import { reducer } from './reducers/index';
+import { MultilingualEffects } from './effects/index';
 
 // for AoT compilation
 export function translateLoaderFactory(httpClient: HttpClient) {
