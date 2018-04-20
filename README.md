@@ -21,6 +21,9 @@ issues:
   5: systemjs config defaultJSExtensions true so package will add .js extension and also set additionalPackages: ExtendPackages so other omit package can be found in there path
   
   6: first resolve npm start error, then resolve client error
+  
+  7: https://github.com/mgechev/angular-seed/wiki/Integration-with-AngularMaterial2
+  https://github.com/Karasuni/angular-seed/commit/9993e924b909ec377cc1b59305bf697e83b38361
 
 http://npm.github.io/how-npm-works-docs/npm3/how-npm3-works.html
 
