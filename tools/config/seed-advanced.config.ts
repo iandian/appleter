@@ -179,21 +179,21 @@ export class SeedAdvancedConfig extends SeedConfig {
       //     defaultExtension: 'js'
       //   }
       // },
-      {
-        name: 'ngrx-store-freeze',
-        packageMeta: {
-          main: 'bundles/ngrx-store-freeze.umd.js',
-          defaultExtension: 'js'
-        }
-      },
-      {
-        name: 'deep-freeze-strict',
-        path: 'node_modules/deep-freeze-strict',
-        packageMeta: {
-          main: 'index.js',
-          defaultExtension: 'js'
-        }
-      },
+      // {
+      //   name: 'ngrx-store-freeze',
+      //   packageMeta: {
+      //     main: 'bundles/ngrx-store-freeze.umd.js',
+      //     defaultExtension: 'js'
+      //   }
+      // },
+      // {
+      //   name: 'deep-freeze-strict',
+      //   path: 'node_modules/deep-freeze-strict',
+      //   packageMeta: {
+      //     main: 'index.js',
+      //     defaultExtension: 'js'
+      //   }
+      // },
     ];
 
     /**

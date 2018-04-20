@@ -468,11 +468,19 @@ export class SeedConfig {
       '@angular/cdk/text-field': 'node_modules/@angular/cdk/bundles/cdk-text-field.umd.js',
       '@angular/cdk/tree': 'node_modules/@angular/cdk/bundles/cdk-tree.umd.js',
       '@angular/cdk/rxjs': 'node_modules/@angular/cdk/bundles/cdk-rxjs.umd.js',
+      
+      'ngrx-store-freeze': 'node_modules/ngrx-store-freeze/bundles/ngrx-store-freeze.umd.js',
+      'deep-freeze-strict': 'node_modules/deep-freeze-strict/index.js',
 
       'app/*': '/app/*',
       // For test config
       'dist/dev/*': '/base/dist/dev/*',
       '*': 'node_modules/*'
+    },
+    meta: {
+        'ngrx-store-freeze': {
+            deps: ['deep-freeze-strict']
+        }
     },
     packages: {
     }
