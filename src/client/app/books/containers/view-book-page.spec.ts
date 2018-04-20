@@ -6,7 +6,7 @@ import { MatCardModule } from '@angular/material';
 
 import { ViewBookPageComponent } from './view-book-page';
 import * as book from '../actions/book';
-import * as fromBooks from '../reducers';
+import * as fromBooks from '../reducers/index';
 import { SelectedBookPageComponent } from './selected-book-page';
 import { BookDetailComponent } from '../components/book-detail';
 import { BookAuthorsComponent } from '../components/book-authors';

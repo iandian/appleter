@@ -4,7 +4,7 @@ import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs/Subscription';
 import { map } from 'rxjs/operators';
 
-import * as fromBooks from '../reducers';
+import * as fromBooks from '../reducers/index';
 import * as book from '../actions/book';
 
 /**

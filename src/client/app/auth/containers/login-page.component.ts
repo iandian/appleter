@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Authenticate } from '../models/user';
-import * as fromAuth from '../reducers';
+import * as fromAuth from '../reducers/index';
 import * as Auth from '../actions/auth';
 
 @Component({

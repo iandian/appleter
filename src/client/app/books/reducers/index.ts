@@ -2,7 +2,7 @@ import { createSelector, createFeatureSelector } from '@ngrx/store';
 import * as fromSearch from './search';
 import * as fromBooks from './books';
 import * as fromCollection from './collection';
-import * as fromRoot from '../../reducers';
+import * as fromRoot from '../../reducers/index';
 
 export interface BooksState {
   search: fromSearch.State;

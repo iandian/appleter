@@ -9,8 +9,8 @@ import { BookPreviewComponent } from './book-preview';
 import { BookPreviewListComponent } from './book-preview-list';
 import { BookSearchComponent } from './book-search';
 
-import { PipesModule } from '../../shared/pipes';
-import { MaterialModule } from '../../material';
+import { PipesModule } from '../../shared/pipes/index';
+import { MaterialModule } from '../../material/index';
 
 export const COMPONENTS = [
   BookAuthorsComponent,

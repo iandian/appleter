@@ -2,7 +2,7 @@ import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 
-import * as fromBooks from '../reducers';
+import * as fromBooks from '../reducers/index';
 import * as collection from '../actions/collection';
 import { Book } from '../models/book';
 

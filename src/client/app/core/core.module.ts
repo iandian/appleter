@@ -8,7 +8,7 @@ import { LayoutComponent } from './components/layout';
 import { NavItemComponent } from './components/nav-item';
 import { SidenavComponent } from './components/sidenav';
 import { ToolbarComponent } from './components/toolbar';
-import { MaterialModule } from '../material';
+import { MaterialModule } from '../material/index';
 
 import { GoogleBooksService } from './services/google-books';
 

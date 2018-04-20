@@ -17,7 +17,7 @@ import { BookAuthorsComponent } from '../components/book-authors';
 import { AddCommasPipe } from '../../shared/pipes/add-commas';
 import { FindBookPageComponent } from './find-book-page';
 import * as book from '../actions/book';
-import * as fromBooks from '../reducers';
+import * as fromBooks from '../reducers/index';
 
 describe('Find Book Page', () => {
   let fixture: ComponentFixture<FindBookPageComponent>;

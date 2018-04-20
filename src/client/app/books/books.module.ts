@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 
-import { ComponentsModule } from './components';
+import { ComponentsModule } from './components/index';
 import { BookEffects } from './effects/book';
 import { CollectionEffects } from './effects/collection';
 import { BookExistsGuard } from './guards/book-exists';
@@ -13,9 +13,9 @@ import { FindBookPageComponent } from './containers/find-book-page';
 import { ViewBookPageComponent } from './containers/view-book-page';
 import { SelectedBookPageComponent } from './containers/selected-book-page';
 import { CollectionPageComponent } from './containers/collection-page';
-import { MaterialModule } from '../material';
+import { MaterialModule } from '../material/index';
 
-import { reducers } from './reducers';
+import { reducers } from './reducers/index';
 
 @NgModule({
   imports: [

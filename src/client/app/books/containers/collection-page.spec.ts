@@ -7,7 +7,7 @@ import { MatCardModule, MatInputModule } from '@angular/material';
 import { BookPreviewListComponent } from '../components/book-preview-list';
 import { BookPreviewComponent } from '../components/book-preview';
 import * as collection from '../actions/collection';
-import * as fromBooks from '../reducers';
+import * as fromBooks from '../reducers/index';
 import { EllipsisPipe } from '../../shared/pipes/ellipsis';
 import { AddCommasPipe } from '../../shared/pipes/add-commas';
 import { BookAuthorsComponent } from '../components/book-authors';

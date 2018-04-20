@@ -6,7 +6,7 @@ import { StoreModule, Store, combineReducers } from '@ngrx/store';
 import { LoginPageComponent } from './login-page.component';
 import { LoginFormComponent } from '../components/login-form.component';
 import * as Auth from '../actions/auth';
-import * as fromAuth from '../reducers';
+import * as fromAuth from '../reducers/index';
 
 describe('Login Page', () => {
   let fixture: ComponentFixture<LoginPageComponent>;

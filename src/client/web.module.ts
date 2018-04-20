@@ -18,7 +18,7 @@ import { CoreModule } from './app/core/core.module';
 import { AuthModule } from './app/auth/auth.module';
 
 import { routes } from './app/routes';
-import { reducers, metaReducers } from './app/reducers';
+import { reducers, metaReducers } from './app/reducers/index';
 import { schema } from './app/db';
 import { CustomRouterStateSerializer } from './app/shared/utils';
 
