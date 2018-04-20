@@ -181,7 +181,10 @@ export class SeedAdvancedConfig extends SeedConfig {
       // },
       {
         name: 'ngrx-store-freeze',
-        path: 'node_modules/ngrx-store-freeze/dist/index.js'
+        packageMeta: {
+          main: 'bundles/ngrx-store-freeze.umd.js',
+          defaultExtension: 'js'
+        }
       },
       {
         name: 'deep-freeze-strict',
