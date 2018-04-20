@@ -403,11 +403,11 @@ export class SeedConfig {
    */
   ROLLUP_INCLUDE_DIR: string[] = ['node_modules/**'];
 
- /**
-  * List of named export Object key value pairs
-  * key: dependencie file
-  * value: exported Objects
-  */
+  /**
+   * List of named export Object key value pairs
+   * key: dependencie file
+   * value: exported Objects
+   */
   ROLLUP_NAMED_EXPORTS: any[] = [];
 
   /**
@@ -450,8 +450,8 @@ export class SeedConfig {
       '@angular/router/testing': 'node_modules/@angular/router/bundles/router-testing.umd.js',
       'angulartics2': 'node_modules/angulartics2/bundles/core.umd.js',
       'angulartics2/segment': 'node_modules/angulartics2/bundles/segment.umd.js',
-      
-      '@angular/cdk': 'node_modules/@angular/cdk/bundles/cdk.umd.js', 
+
+      '@angular/cdk': 'node_modules/@angular/cdk/bundles/cdk.umd.js',
       '@angular/cdk/a11y': 'node_modules/@angular/cdk/bundles/cdk-a11y.umd.js',
       '@angular/cdk/bidi': 'node_modules/@angular/cdk/bundles/cdk-bidi.umd.js',
       '@angular/cdk/coercion': 'node_modules/@angular/cdk/bundles/cdk-coercion.umd.js',
@@ -468,7 +468,7 @@ export class SeedConfig {
       '@angular/cdk/text-field': 'node_modules/@angular/cdk/bundles/cdk-text-field.umd.js',
       '@angular/cdk/tree': 'node_modules/@angular/cdk/bundles/cdk-tree.umd.js',
       '@angular/cdk/rxjs': 'node_modules/@angular/cdk/bundles/cdk-rxjs.umd.js',
-      
+
       'ngrx-store-freeze': 'node_modules/ngrx-store-freeze/bundles/ngrx-store-freeze.umd.js',
       'deep-freeze-strict': 'node_modules/deep-freeze-strict/index.js',
 
@@ -476,11 +476,6 @@ export class SeedConfig {
       // For test config
       'dist/dev/*': '/base/dist/dev/*',
       '*': 'node_modules/*'
-    },
-    meta: {
-        'ngrx-store-freeze': {
-            deps: ['deep-freeze-strict']
-        }
     },
     packages: {
     }
@@ -751,9 +746,9 @@ export class SeedConfig {
 
   }
 
-/**
- * Convert named rollup array to object
- */
+  /**
+   * Convert named rollup array to object
+   */
   getRollupNamedExports() {
     let namedExports = {};
     this.ROLLUP_NAMED_EXPORTS.map(namedExport => {
