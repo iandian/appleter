@@ -194,6 +194,14 @@ export class SeedAdvancedConfig extends SeedConfig {
       //     defaultExtension: 'js'
       //   }
       // },
+      {
+        name: 'ngrx-store-freeze',
+        path: 'node_modules/ngrx-store-freeze/dist/index.js'
+      },
+      {
+        name: 'deep-freeze-strict',
+        path: 'node_modules/deep-freeze-strict/index.js'
+      }
     ];
 
     /**

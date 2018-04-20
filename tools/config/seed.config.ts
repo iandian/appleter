@@ -469,8 +469,8 @@ export class SeedConfig {
       '@angular/cdk/tree': 'node_modules/@angular/cdk/bundles/cdk-tree.umd.js',
       '@angular/cdk/rxjs': 'node_modules/@angular/cdk/bundles/cdk-rxjs.umd.js',
 
-      'ngrx-store-freeze': 'node_modules/ngrx-store-freeze/bundles/ngrx-store-freeze.umd.js',
-      'deep-freeze-strict': 'node_modules/deep-freeze-strict/index.js',
+      // 'ngrx-store-freeze': 'node_modules/ngrx-store-freeze/bundles/ngrx-store-freeze.umd.js',
+      // 'deep-freeze-strict': 'node_modules/deep-freeze-strict/index.js',
 
       'app/*': '/app/*',
       // For test config
