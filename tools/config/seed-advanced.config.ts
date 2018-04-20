@@ -186,10 +186,10 @@ export class SeedAdvancedConfig extends SeedConfig {
           defaultExtension: 'js'
         }
       },
-      {
-        name: 'deep-freeze-strict',
-        path: 'node_modules/deep-freeze-strict/index.js'
-      }
+      // {
+      //   name: 'deep-freeze-strict',
+      //   path: 'node_modules/deep-freeze-strict/index.js'
+      // }
     ];
 
     /**
