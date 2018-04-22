@@ -20,22 +20,6 @@ import { BuildType, ExtendPackages, InjectableDependency } from './seed.config.i
  *
  *****************************************************************/
 
-/************************* DO NOT CHANGE ************************
- *
- * DO NOT make any changes in this file because it will
- * make your migration to newer versions of the seed harder.
- *
- * Your application-specific configurations should be
- * in project.config.ts. If you need to change any tasks
- * from "./tasks" overwrite them by creating a task with the
- * same name in "./projects". For further information take a
- * look at the documentation:
- *
- * 1) https://github.com/mgechev/angular-seed/tree/master/tools
- * 2) https://github.com/mgechev/angular-seed/wiki
- *
- *****************************************************************/
-
 /**
  * The enumeration of available environments.
  * @type {Environments}
@@ -425,7 +409,7 @@ export class SeedConfig {
    * @type {any}
    */
   SYSTEM_CONFIG_DEV: any = {
-    defaultJSExtensions: true,
+    // defaultJSExtensions: true,
     paths: {
       [this.BOOTSTRAP_MODULE]: `${this.APP_BASE}${this.BOOTSTRAP_MODULE}`,
       '@angular/animations': 'node_modules/@angular/animations/bundles/animations.umd.js',
@@ -479,6 +463,9 @@ export class SeedConfig {
       '*': 'node_modules/*'
     },
     packages: {
+      [this.APP_BASE]: {
+        defaultExtension: 'js'
+      }
     }
   };
 

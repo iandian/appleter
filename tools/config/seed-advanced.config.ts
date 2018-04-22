@@ -75,6 +75,7 @@ export class SeedAdvancedConfig extends SeedConfig {
       },
       {
         name: '@ngrx/db',
+        path: 'node_modules/@ngrx/db',
         packageMeta: {
           main: 'bundles/db.umd.js',
           defaultExtension: 'js'
@@ -82,6 +83,7 @@ export class SeedAdvancedConfig extends SeedConfig {
       },
       {
         name: '@ngrx/router-store',
+        path: 'node_modules/@ngrx/router-store',
         packageMeta: {
           main: 'bundles/router-store.umd.js',
           defaultExtension: 'js'
@@ -89,6 +91,7 @@ export class SeedAdvancedConfig extends SeedConfig {
       },
       {
         name: '@ngrx/store',
+        path: 'node_modules/@ngrx/store',
         packageMeta: {
           main: 'bundles/store.umd.js',
           defaultExtension: 'js'
@@ -96,6 +99,7 @@ export class SeedAdvancedConfig extends SeedConfig {
       },
       {
         name: '@ngrx/effects',
+        path: 'node_modules/@ngrx/effects',
         packageMeta: {
           main: 'bundles/effects.umd.js',
           defaultExtension: 'js'
@@ -103,6 +107,7 @@ export class SeedAdvancedConfig extends SeedConfig {
       },
       {
         name: '@ngrx/entity',
+        path: 'node_modules/@ngrx/entity',
         packageMeta: {
           main: 'bundles/entity.umd.js',
           defaultExtension: 'js'
@@ -114,6 +119,7 @@ export class SeedAdvancedConfig extends SeedConfig {
       },
       {
         name: '@ngrx/store-devtools',
+        path: 'node_modules/@ngrx/store-devtools',
         packageMeta: {
           main: 'bundles/store-devtools.umd.js',
           defaultExtension: 'js'
@@ -121,6 +127,7 @@ export class SeedAdvancedConfig extends SeedConfig {
       },
       {
         name: '@ngx-translate/core',
+        path: 'node_modules/@ngx-translate/core',
         packageMeta: {
           main: 'bundles/core.umd.js',
           defaultExtension: 'js'
@@ -128,6 +135,7 @@ export class SeedAdvancedConfig extends SeedConfig {
       },
       {
         name: 'rxjs',
+        path: 'node_modules/rxjs',
         packageMeta: {
           main: 'bundles/Rx.js',
           defaultExtension: 'js'
@@ -135,6 +143,7 @@ export class SeedAdvancedConfig extends SeedConfig {
       },
       {
         name: '@ngx-translate/http-loader',
+        path: 'node_modules/@ngx-translate/http-loader',
         packageMeta: {
           main: 'bundles/ngx-translate-http-loader.umd.js',
           defaultExtension: 'js'
