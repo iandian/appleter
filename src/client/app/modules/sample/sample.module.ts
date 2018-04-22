@@ -14,7 +14,6 @@ import { MultilingualModule } from '../i18n/multilingual.module';
 import { reducer } from './reducers/index';
 import { SampleEffects } from './effects/index';
 
-
 /**
  * Do not specify providers for modules that might be imported by a lazy loaded module.
  */

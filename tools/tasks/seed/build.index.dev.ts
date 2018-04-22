@@ -13,14 +13,17 @@ const plugins = <any>gulpLoadPlugins();
  * Executes the build process, injecting the shims and libs into the `index.hml` for the development environment.
  */
 export = () => {
-  return gulp.src(join(Config.APP_SRC, 'index.html'))
+  return gulp
+    .src(join(Config.APP_SRC, 'index.html'))
     .pipe(inject('shims'))
     .pipe(inject('libs'))
     .pipe(inject())
-    .pipe(plugins.template(
+    .pipe(
+    plugins.template(
       new TemplateLocalsBuilder().withoutStringifiedEnvConfig().build(),
-      {interpolate: /<%=([\s\S]+?)%>/g}
-    ))
+      Config.TEMPLATE_CONFIG
+    )
+    )
     .pipe(gulp.dest(Config.APP_DEST));
 };
 
@@ -29,10 +32,13 @@ export = () => {
  * @param {string} name - The file to be injected.
  */
 function inject(name?: string) {
-  return plugins.inject(gulp.src(getInjectablesDependenciesRef(name), { read: false }), {
-    name,
-    transform: transformPath()
-  });
+  return plugins.inject(
+    gulp.src(getInjectablesDependenciesRef(name), { read: false }),
+    {
+      name,
+      transform: transformPath()
+    }
+  );
 }
 
 /**
@@ -64,7 +70,7 @@ function mapPath(dep: any) {
  * environment.
  */
 function transformPath() {
-  return function (filepath: string) {
+  return function(filepath: string) {
     if (filepath.startsWith(`/${Config.APP_DEST}`)) {
       filepath = filepath.replace(`/${Config.APP_DEST}`, '');
     }

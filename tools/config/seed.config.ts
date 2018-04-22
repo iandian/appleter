@@ -2,23 +2,12 @@ import { join } from 'path';
 import * as slash from 'slash';
 import { argv } from 'yargs';
 
-import { BuildType, ExtendPackages, InjectableDependency } from './seed.config.interfaces';
-
-/************************* DO NOT CHANGE ************************
- *
- * DO NOT make any changes in this file because it will
- * make your migration to newer versions of the seed harder.
- *
- * Your application-specific configurations should be
- * in project.config.ts. If you need to change any tasks
- * from "./tasks" overwrite them by creating a task with the
- * same name in "./projects". For further information take a
- * look at the documentation:
- *
- * 1) https://github.com/mgechev/angular-seed/tree/master/tools
- * 2) https://github.com/mgechev/angular-seed/wiki
- *
- *****************************************************************/
+import {
+  BuildType,
+  ExtendPackages,
+  InjectableDependency,
+  SourceMapExplorerOutputFormat
+} from './seed.config.interfaces';
 
 /************************* DO NOT CHANGE ************************
  *
@@ -43,6 +32,16 @@ import { BuildType, ExtendPackages, InjectableDependency } from './seed.config.i
 export const BUILD_TYPES: BuildType = {
   DEVELOPMENT: 'dev',
   PRODUCTION: 'prod'
+};
+
+/**
+ * The enumeration of available source-map-explorer output formats.
+ * @type {SourceMapExplorerOutputFormats}
+ */
+export const SME_OUTPUT_FORMATS: SourceMapExplorerOutputFormat = {
+  HTML: 'html',
+  JSON: 'json',
+  TSV: 'tsv'
 };
 
 /**
@@ -76,6 +75,23 @@ export class SeedConfig {
    * The default build type is `dev`, which can be overriden by the `--build-type dev|prod` flag when running `npm start`.
    */
   BUILD_TYPE = getBuildType();
+
+  /**
+   * The flag to determine preserving source maps on build or not.
+   * The default value is `false`, which can be overriden by the `--preserve-source-maps` flag when running `npm start`.
+   */
+  PRESERVE_SOURCE_MAPS = argv['preserve-source-maps'] || false;
+
+  /**
+   * The current source-map-explorer output format.
+   * The default value is `html`, which can be overriden by the `--sme-out-format html|json|tsv` flag when running `npm run sme`.
+   */
+  SME_OUT_FORMAT = getSmeOutFormat();
+
+  /**
+   * The current source-map-explorer output folder.
+   */
+  SME_DIR = 'sme';
 
   /**
    * The flag for the debug option of the application.
@@ -278,6 +294,12 @@ export class SeedConfig {
   E2E_DEST = `${this.DIST_DIR}/e2e`;
 
   /**
+   * The folder for the built translation file.
+   * @type {string}
+   */
+  LOCALE_DEST = `${this.DIST_DIR}/locale`;
+
+  /**
    * The folder for temporary files.
    * @type {string}
    */
@@ -362,6 +384,43 @@ export class SeedConfig {
   EXTRA_WATCH_PATHS: string[] = [];
 
   /**
+   * Defines the template config.
+   */
+  TEMPLATE_CONFIG = {
+    /**
+     * Used to detect `data` property values to be HTML-escaped.
+     *
+     * @memberOf _.templateSettings
+     * @type {RegExp}
+     */
+    escape: /<%-([\s\S]+?)%>/g,
+
+    /**
+     * Used to detect code to be evaluated.
+     *
+     * @memberOf _.templateSettings
+     * @type {RegExp}
+     */
+    evaluate: /<%([\s\S]+?)%>/g,
+
+    /**
+     * Used to detect `data` property values to inject.
+     *
+     * @memberOf _.templateSettings
+     * @type {RegExp}
+     */
+    interpolate: /<%=([\s\S]+?)%>/g,
+
+    /**
+     * Used to reference the data object in the template text.
+     *
+     * @memberOf _.templateSettings
+     * @type {string}
+     */
+    variable: ''
+  };
+
+  /**
    * The list of NPM dependcies to be injected in the `index.html`.
    * @type {InjectableDependency[]}
    */
@@ -424,7 +483,7 @@ export class SeedConfig {
    * @type {any}
    */
   SYSTEM_CONFIG_DEV: any = {
-    defaultJSExtensions: true,
+    // defaultJSExtensions: true,
     paths: {
       [this.BOOTSTRAP_MODULE]: `${this.APP_BASE}${this.BOOTSTRAP_MODULE}`,
       '@angular/animations': 'node_modules/@angular/animations/bundles/animations.umd.js',
@@ -448,6 +507,7 @@ export class SeedConfig {
       '@angular/platform-browser-dynamic/testing':
       'node_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic-testing.umd.js',
       '@angular/router/testing': 'node_modules/@angular/router/bundles/router-testing.umd.js',
+
       'angulartics2': 'node_modules/angulartics2/bundles/core.umd.js',
       'angulartics2/segment': 'node_modules/angulartics2/bundles/segment.umd.js',
 
@@ -457,6 +517,9 @@ export class SeedConfig {
       '*': 'node_modules/*'
     },
     packages: {
+      [this.BOOTSTRAP_DIR]: {
+        defaultExtension: 'js'
+      }
     }
   };
 
@@ -538,6 +601,10 @@ export class SeedConfig {
         main: 'bundles/service-worker.umd.js',
         defaultExtension: 'js'
       },
+      // 'rxjs': {
+      //   main: 'Rx.js',
+      //   defaultExtension: 'js'
+      // }
     }
   };
 
@@ -787,4 +854,9 @@ function getBuildType() {
   } else {
     return BUILD_TYPES.DEVELOPMENT;
   }
+}
+
+function getSmeOutFormat() {
+  const format = (argv['sme-out-format'] || '').toUpperCase();
+  return SME_OUTPUT_FORMATS[format] || SME_OUTPUT_FORMATS.HTML;
 }

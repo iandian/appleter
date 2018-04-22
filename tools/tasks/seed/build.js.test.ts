@@ -1,4 +1,3 @@
-import 'reflect-metadata';
 import * as gulp from 'gulp';
 import * as gulpLoadPlugins from 'gulp-load-plugins';
 import * as merge from 'merge-stream';
@@ -21,10 +20,10 @@ export =
   class BuildJsTest extends TypeScriptTask {
     run() {
       let tsProject: any;
-      let typings = gulp.src( [
+      const typings = gulp.src( [
         Config.TOOLS_DIR + '/manual_typings/**/*.d.ts'
       ] );
-      let src = [
+      const src = [
         join(Config.APP_SRC, '**/*.spec.ts')
       ];
 
