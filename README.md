@@ -26,3 +26,24 @@ issues:
     https://github.com/Karasuni/angular-seed/commit/9993e924b909ec377cc1b59305bf697e83b38361
 
 http://npm.github.io/how-npm-works-docs/npm3/how-npm3-works.html
+
+https://github.com/sindresorhus/awesome-electron
+
+typescript electron app
+with angular
+https://github.com/Eugeny/terminus
+https://github.com/mgechev/ngrev
+https://github.com/imolorhe/altair
+https://github.com/bitwarden/desktop
+https://github.com/stbui/angular-material-app
+
+without angular
+https://github.com/railsware/upterm
+https://github.com/Microsoft/vscode
+https://github.com/KokoIRC/koko
+https://github.com/frankhale/toby
+https://github.com/rhysd/Shiba
+https://github.com/MayGo/tockler
+https://github.com/wexond/wexond
+https://github.com/matthew-matvei/freeman
+

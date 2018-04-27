@@ -60,7 +60,7 @@ export class SeedAdvancedConfig extends SeedConfig {
     this.BOOTSTRAP_FACTORY_PROD_MODULE = `${this.BOOTSTRAP_DIR}${bootstrap}.prod`;
 
     this.APP_TITLE = 'Angular Seed Advanced';
-    this.APP_BASE = this.TARGET_DESKTOP ? '' // paths must remain relative for desktop build
+    this.APP_BASE = this.TARGET_DESKTOP ? './' // paths must remain relative for desktop build
       : '/';
 
     // Advanced seed packages
@@ -210,6 +210,10 @@ export class SeedAdvancedConfig extends SeedConfig {
       {
         name: 'deep-freeze-strict',
         path: 'node_modules/deep-freeze-strict/index.js'
+      },
+      {
+        name: 'electron-debug',
+        path: 'node_modules/electron-debug/index.js'
       }
     ];
 

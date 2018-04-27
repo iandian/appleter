@@ -1,5 +1,6 @@
 import * as gulp from 'gulp';
 import * as gulpLoadPlugins from 'gulp-load-plugins';
+import * as util from 'gulp-util';
 import { join } from 'path';
 import * as slash from 'slash';
 
@@ -19,7 +20,7 @@ export = () => {
     .pipe(inject())
     .pipe(plugins.template(
       new TemplateLocalsBuilder().withoutStringifiedEnvConfig().build(),
-      {interpolate: /<%=([\s\S]+?)%>/g}
+      { interpolate: /<%=([\s\S]+?)%>/g }
     ))
     .pipe(gulp.dest(Config.APP_DEST));
 };
@@ -64,16 +65,25 @@ function mapPath(dep: any) {
  * environment.
  */
 function transformPath() {
-  return function (filepath: string) {
+  return function(filepath: string) {
     if (filepath.startsWith(`/${Config.APP_DEST}`)) {
       filepath = filepath.replace(`/${Config.APP_DEST}`, '');
     }
+
+    util.log('-----------------------------------');
+    util.log(Config.TARGET_DESKTOP);
+    util.log(Config.APP_BASE);
+    util.log('---------------------++++++++++++++');
+
     if (Config.TARGET_DESKTOP) {
       let path = join(Config.APP_BASE, filepath);
       if (path.indexOf('dist/dev') > -1 || path.indexOf('dist\\dev') > -1) {
-        path = path.replace(/(dist\/dev\/)|(dist\\dev\\)/g, '');
+        if (path.indexOf('node_modules') <= -1) {
+          path = path.replace(/(dist\/dev\/)|(dist\\dev\\)/g, '');
+        }
+
       }
-      arguments[0] = path.substring(1);
+      arguments[0] = path;
     } else {
       arguments[0] = join(Config.APP_BASE, filepath);
     }

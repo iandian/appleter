@@ -34,6 +34,17 @@ app.on('window-all-closed', () => {
   }
 });
 
+//fix Failed to load resource: net::ERR_INSECURE_RESPONSE error
+app.on('certificate-error', (event, webContents, url, error, certificate, callback) => {
+  // if (url === 'https://github.com') {
+    // Verification logic.
+    event.preventDefault()
+    callback(true)
+  // } else {
+  //   callback(false)
+  // }
+})
+
 app.on('ready', () => {
 
   // Initialize the window to our specified dimensions
