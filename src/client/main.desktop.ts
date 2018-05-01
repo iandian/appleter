@@ -24,9 +24,9 @@ let menu: any;
 //   autoSubmit: true
 // });
 
-if (process.env.NODE_ENV === 'development') {
+// if (process.env.NODE_ENV === 'development') {
   require('electron-debug')();
-}
+// }
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {

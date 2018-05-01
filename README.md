@@ -47,3 +47,33 @@ https://github.com/MayGo/tockler
 https://github.com/wexond/wexond
 https://github.com/matthew-matvei/freeman
 
+
+what is AoT
+https://angular.io/guide/aot-compiler
+https://mgechev.github.io/angular-seed/#how-to-start-with-aot-compilation
+
+tslint.JSON    compile use
+https://palantir.github.io/tslint/usage/tslint-json/
+
+what is angular service worker and ngsw-config.json
+https://angular.io/guide/service-worker-intro
+https://angular.io/guide/service-worker-getting-started
+https://angular.io/guide/service-worker-communications
+
+
+npm install cnpm -g --registry=http://registry.npm.taobao.org
+cnpm install electron -g
+https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/
+sudo apt-get install libgtk2.0-0:i386
+
+
+nativescript
+https://github.com/NativeScript/sample-Groceries
+https://github.com/DeviantJS/awesome-nativescript
+https://github.com/NativeScript/nativescript-marketplace-demo
+https://github.com/nativescript/sample-groceries
+https://github.com/NativeScript/nativescript-sdk-examples-ng
+https://developer.telerik.com/featured/getting-started-nativescript/
+https://tryexcept.com/articles/2016/10/27/nativescript-example-step-by-step-windows-10.html
+https://dzone.com/articles/8-steps-to-publish-your-nativescript-app-to-the-ap
+https://docs.telerik.com/platform/appbuilder/nativescript/creating-your-ns-app/clone-from-sample-ns
