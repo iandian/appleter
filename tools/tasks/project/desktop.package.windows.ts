@@ -56,6 +56,7 @@ export = () => {
         config: {
           directories: {
             buildResources: 'dist/dev',
+            app: 'dist/dev',
             output: 'desktop/windows'
           },
         }

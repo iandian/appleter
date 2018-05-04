@@ -66,6 +66,18 @@ cnpm install electron -g
 https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/
 sudo apt-get install libgtk2.0-0:i386
 
+npm install jquery popper.js echarts asar
+node_modules/.bin/asar list desktop/windows/win-unpacked/resources/app.asar
+
+have to install wine 
+check
+https://www.electron.build/multi-platform-build#linux
+https://wiki.winehq.org/Debian
+still not work after install
+so i decide to use docker file
+docker pull electronuserland/builder:wine
+
+
 
 nativescript
 https://github.com/NativeScript/sample-Groceries
@@ -77,3 +89,7 @@ https://developer.telerik.com/featured/getting-started-nativescript/
 https://tryexcept.com/articles/2016/10/27/nativescript-example-step-by-step-windows-10.html
 https://dzone.com/articles/8-steps-to-publish-your-nativescript-app-to-the-ap
 https://docs.telerik.com/platform/appbuilder/nativescript/creating-your-ns-app/clone-from-sample-ns
+
+node --inspect=0.0.0.0:9229 myproject.js
+node --inspect-brk=0.0.0.0:9229 myproject.js
+chrome://inspect
