@@ -80,8 +80,30 @@ docker pull electronuserland/builder:wine
 
 
 nativescript
+https://blog.johanneshoppe.de/2016/06/setting-up-android-emulators-for-nativescript-development/
+https://github.com/NativeScript/setup-scripts/blob/master/native-script.ps1
+
+after install android studio the emulator is in this path
+C:\Users\%username%\AppData\Local\Android\sdk\tools
+
+Missing emulator engine program for 'x86' CPU
+open avd manager to create new avd, and select x86_64, not x86
+
+set ANDROID_HOME  to  C:\Users\%username%\AppData\Local\Android\sdk\
+
+> Could not resolve com.android.tools.build:gradle:3.0.1.
+   > Could not get resource 'https://dl.google.com/dl/android/maven2/com/android/tools/build/gradle/3.0.1/gradle-3.0.1.pom'.
+      > Could not GET 'https://dl.google.com/dl/android/maven2/com/android/tools/build/gradle/3.0.1/gradle-3.0.1.pom'.
+         > sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+  
+需要保存google.cer， chrome上点击google网站的secure, 选择certificate的details，然后copy to file 保存为google.cer文件
+cmd run as administrator
+keytool -importcert -file google.cer -alias google -keystore "C:\Program Files\Java\jdk1.8.0_131\jre/lib/security/cacerts" -storepass changeit
+
 https://github.com/NativeScript/sample-Groceries
+http://www.bubuko.com/infodetail-677924.html
 https://github.com/DeviantJS/awesome-nativescript
+https://stackoverflow.com/questions/32515336/how-debug-nativescript-code
 https://github.com/NativeScript/nativescript-marketplace-demo
 https://github.com/nativescript/sample-groceries
 https://github.com/NativeScript/nativescript-sdk-examples-ng
@@ -89,7 +111,26 @@ https://developer.telerik.com/featured/getting-started-nativescript/
 https://tryexcept.com/articles/2016/10/27/nativescript-example-step-by-step-windows-10.html
 https://dzone.com/articles/8-steps-to-publish-your-nativescript-app-to-the-ap
 https://docs.telerik.com/platform/appbuilder/nativescript/creating-your-ns-app/clone-from-sample-ns
+https://docs.nativescript.org/tooling/debugging
+https://docs.nativescript.org/tooling/visual-studio-code-extension
+
+tns doctor
+
+tns run android
+tns debug android
+如果已经打开emulator， 则运行
+tns debug android --start
+
+console.log("Hello, NativeScript!");
 
 node --inspect=0.0.0.0:9229 myproject.js
 node --inspect-brk=0.0.0.0:9229 myproject.js
 chrome://inspect
+
+ionic
+https://github.com/ionic-team/ionic
+https://github.com/Alexintosh/Awesome-Ionic
+https://github.com/XueRainey/ionic2
+https://github.com/aggarwalankush/ionic-mosum
+https://github.com/jvitor83/angular-pwa-seed
+
