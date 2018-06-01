@@ -127,6 +127,32 @@ node --inspect=0.0.0.0:9229 myproject.js
 node --inspect-brk=0.0.0.0:9229 myproject.js
 chrome://inspect
 
+tns create project from angular template
+copy sample-Groceries relative resources and find the package.json need to update
+first:
+  "nativescript-dev-typescript": "^0.7.0",
+  "nativescript-dev-webpack": "0.11.0",
+the older package has bugs
+then:
+  "rxjs": "^5.5.5",
+  "rxjs-compat": "6.0.0-beta.1",
+notice:
+https://github.com/NativeScript/nativescript-angular/issues/1201
+need to change all import from rxjs or rxjs/Rx to following
+  Remove this line
+
+  import { Observable, pipe} from "rxjs/Rx";
+  and try the following:
+
+  import { Observable } from "rxjs/Observable";
+  import { pipe } from 'rxjs/util/pipe';
+
+to build apk
+tns platform remove android
+tns platform add android
+tns prepare android
+tns build android
+
 ionic
 https://github.com/ionic-team/ionic
 https://github.com/Alexintosh/Awesome-Ionic
